@@ -59,3 +59,6 @@ Hal-hal yang perlu dipastikan akan proses automatisasi berjalan dengan baik.
 ## Demo
 
 [https://covid19-indo-harian.herokuapp.com/](https://covid19-indo-harian.herokuapp.com/)
+
+![gambar_1](https://i.postimg.cc/sg65NXBV/Screenshot-2020-07-04-00-59-05.png)
+
