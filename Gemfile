@@ -38,6 +38,7 @@ gem 'bootsnap',                           '>= 1.1.0', require: false
 
 gem 'httparty',                           '~> 0.18.1'
 gem 'nokogiri',                           '~> 1.10', '>= 1.10.9'
+gem 'whenever',                           '~> 1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

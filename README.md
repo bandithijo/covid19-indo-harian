@@ -1,24 +1,57 @@
-# README
+# COVID-19 INDONESIA HARIAN (Studi Kasus: KemKes)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails apps untuk melakukan pencatatan data dan disajikan dalam bentuk tabel perhari, berkenaan tentang "**Situasi COVID-19**" pada website [KemKes](https://kemkes.go.id/).
 
-Things you may want to cover:
+## Prerequisite
 
-* Ruby version
+| <center>No.</center> | <center>Gem</center> | <center>Version</center> |
+| :--: | :--- | :--: |
+| 1 | [**Ruby**](https://www.ruby-lang.org/en/) | `2.6.6` |
+| 1 | [**Ruby on Rails**](https://rubyonrails.org/) | `5.2.4` |
+| 2 | [**PostgreSQL**](https://www.postgresql.org/) | `12.3` |
+| 3 | [**HTTParty**](https://rubygems.org/gems/httparty) | `0.18.1` |
+| 4 | [**Nokogiri**](https://rubygems.org/gems/nokogiri) | `1.10.9` |
+| 5 | [**whenever**](https://rubygems/gems/whenever) | `1.0` |
 
-* System dependencies
+## Menjalankan Script
 
-* Configuration
+```shell
+$ rails scraper:run
+```
 
-* Database creation
+## Menjalankan Commit untuk Seed
 
-* Database initialization
+```shell
+$ rails scraper:seed:commit
+```
 
-* How to run the test suite
+## Mereset Data Tabel
 
-* Services (job queues, cache servers, search engines, etc.)
+```shell
+$ rails db:reset
+```
 
-* Deployment instructions
+## Automatic Scraping
 
-* ...
+Saya menambahkan fungsi penjadwalan proses *scraping* dengan bantuan **whenever** gem.
+
+Untuk mengaktifkan dan membuatnya berjalan pada saat sistem dinyalakan.
+
+Aktifkan **cronie** service.
+
+```shell
+$ sudo systemctl enable --now cronie.service
+```
+
+Lalu, daftarkan penjadwalan ke **crontab**.
+
+```shell
+$ whenever --update-crontab
+```
+
+Secara *default* saya menjadwalkan *script* ini akan melakukan *scraping* setiap hari pada jam 05.00 PM.
+
+Hal-hal yang perlu dipastikan akan proses automatisasi berjalan dengan baik.
+
+1. PostgreSQL service sudah berjalan
+2. Cronie service sudah berjalan
