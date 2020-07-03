@@ -1,0 +1,44 @@
+<div class="hold">
+  <h1>COVID-19 INDONESIA - TABEL PENCATATAN DATA PERHARI</h1>
+  <p>Sumber data: Situs Resmi Kementrian Kesehatan Republik Indonesian (https://kemkes.go.id)<br>
+  Terakhir diperbaharui: <b><%= @latest_updates %></b></p>
+</div>
+<table cellspacing="0" cellpadding="5">
+  <tr>
+    <th>NO.</th>
+    <th>Tanggal</th>
+    <th>Total Kasus</th>
+    <th>Kasus<br><span class="nobr">(Hari ini)</span></th>
+    <th>Meninggal</th>
+    <th>Meninggal<br><span class="nobr">(Hari ini)</span></th>
+    <th>Sembuh</th>
+    <th>Sembuh<br><span class="nobr">(Hari ini)</span></th>
+    <th>ODP</th>
+    <th>ODP<br><span class="nobr">(Hari ini)</span></th>
+    <th>PDP</th>
+    <th>PDP<br><span class="nobr">(Hari ini)</span></th>
+    <th>Aktif</th>
+  </tr>
+  <% @cases.each.with_index(1) do |kasus, index| %>
+    <% positif_covid_kemarin   = @cases[index-2].positif_covid %>
+    <% meninggal_covid_kemarin = @cases[index-2].meninggal_covid %>
+    <% sembuh_covid_kemarin    = @cases[index-2].sembuh_covid %>
+    <% jumlah_odp_kemarin      = @cases[index-2].jumlah_odp %>
+    <% jumlah_pdp_kemarin      = @cases[index-2].jumlah_pdp %>
+    <tr>
+      <td><%= index %></td>
+      <td><%= kasus.fetched_at %></td>
+      <td><%= kasus.positif_covid %></td>
+      <td><%= index == 1 ? 0 : kasus.positif_covid.to_i - positif_covid_kemarin.to_i %></td>
+      <td><%= kasus.meninggal_covid %></td>
+      <td><%= index == 1 ? 0 : kasus.meninggal_covid.to_i - meninggal_covid_kemarin.to_i %></td>
+      <td><%= kasus.sembuh_covid %></td>
+      <td><%= index == 1 ? 0 : kasus.sembuh_covid.to_i - sembuh_covid_kemarin.to_i %></td>
+      <td><%= kasus.jumlah_odp %></td>
+      <td><%= index == 1 ? 0 : kasus.jumlah_odp.to_i - jumlah_odp_kemarin.to_i %></td>
+      <td><%= kasus.jumlah_pdp %></td>
+      <td><%= index == 1 ? 0 : kasus.jumlah_pdp.to_i - jumlah_pdp_kemarin.to_i %></td>
+      <td><%= kasus.positif_covid.to_i - (kasus.meninggal_covid + kasus.sembuh_covid) %></td>
+    </tr>
+  <% end %>
+</table>

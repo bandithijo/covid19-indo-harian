@@ -1,0 +1,41 @@
+body {
+  font-family: 'Fira Sans';
+  font-size: 11px;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 5px 0;
+  padding: 0 0 10px 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: -5px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th {
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 78px;
+}
+
+.hold {
+  background-color: white;
+  margin-top: -10px;
+  padding: 10px 0 0 0;
+  position: sticky;
+  top: 0;
+}
+
+.nobr {
+  white-space: nowrap;
+}
