@@ -1,6 +1,6 @@
 # COVID-19 INDONESIA HARIAN (Studi Kasus: KemKes)
 
-Ruby on Rails apps untuk melakukan pencatatan data dan disajikan dalam bentuk tabel perhari, berkenaan tentang "**Situasi COVID-19**" pada website [KemKes](https://kemkes.go.id/).
+Ruby on Rails app. untuk pencatatan data dan disajikan dalam bentuk tabel perhari, berkenaan tentang "**Situasi COVID-19**" pada website [KemKes](https://kemkes.go.id/).
 
 ## Prerequisite
 
@@ -55,3 +55,7 @@ Hal-hal yang perlu dipastikan akan proses automatisasi berjalan dengan baik.
 
 1. PostgreSQL service sudah berjalan
 2. Cronie service sudah berjalan
+
+## Demo
+
+[https://covid19-indo-harian.herokuapp.com/](https://covid19-indo-harian.herokuapp.com/)
