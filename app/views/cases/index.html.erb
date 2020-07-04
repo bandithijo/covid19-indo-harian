@@ -28,17 +28,17 @@
     <tr>
       <td><%= index %></td>
       <td><%= kasus.fetched_at %></td>
-      <td><%= kasus.positif_covid %></td>
-      <td><%= index == 1 ? 0 : kasus.positif_covid.to_i - positif_covid_kemarin.to_i %></td>
-      <td><%= kasus.meninggal_covid %></td>
-      <td><%= index == 1 ? 0 : kasus.meninggal_covid.to_i - meninggal_covid_kemarin.to_i %></td>
-      <td><%= kasus.sembuh_covid %></td>
-      <td><%= index == 1 ? 0 : kasus.sembuh_covid.to_i - sembuh_covid_kemarin.to_i %></td>
-      <td><%= kasus.jumlah_odp %></td>
-      <td><%= index == 1 ? 0 : kasus.jumlah_odp.to_i - jumlah_odp_kemarin.to_i %></td>
-      <td><%= kasus.jumlah_pdp %></td>
-      <td><%= index == 1 ? 0 : kasus.jumlah_pdp.to_i - jumlah_pdp_kemarin.to_i %></td>
-      <td><%= kasus.positif_covid.to_i - (kasus.meninggal_covid + kasus.sembuh_covid) %></td>
+      <td><%= number_with_delimiter(kasus.positif_covid) %></td>
+      <td><%= number_with_delimiter(index == 1 ? 0 : kasus.positif_covid.to_i - positif_covid_kemarin.to_i) %></td>
+      <td><%= number_with_delimiter(kasus.meninggal_covid) %></td>
+      <td><%= number_with_delimiter(index == 1 ? 0 : kasus.meninggal_covid.to_i - meninggal_covid_kemarin.to_i) %></td>
+      <td><%= number_with_delimiter(kasus.sembuh_covid) %></td>
+      <td><%= number_with_delimiter(index == 1 ? 0 : kasus.sembuh_covid.to_i - sembuh_covid_kemarin.to_i) %></td>
+      <td><%= number_with_delimiter(kasus.jumlah_odp) %></td>
+      <td><%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_odp.to_i - jumlah_odp_kemarin.to_i) %></td>
+      <td><%= number_with_delimiter(kasus.jumlah_pdp) %></td>
+      <td><%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_pdp.to_i - jumlah_pdp_kemarin.to_i) %></td>
+      <td><%= number_with_delimiter(kasus.positif_covid.to_i - (kasus.meninggal_covid + kasus.sembuh_covid)) %></td>
     </tr>
   <% end %>
 </table>
