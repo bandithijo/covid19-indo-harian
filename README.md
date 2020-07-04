@@ -2,6 +2,8 @@
 
 Ruby on Rails app. untuk pencatatan data dan disajikan dalam bentuk tabel perhari, berkenaan tentang "**Situasi COVID-19**" pada website [KemKes](https://kemkes.go.id/).
 
+Data-data kasus perhari yang ditampilkan pada aplikasi ini adalah data-data yang dicatat dari situs resmi Kementrian Kesehatan Republik Indonesia yang dilakukan secara otomatis oleh *script* yang bertugas melakukan *scraping* setiap hari pada pukul 17.00 WITA.
+
 ## Prerequisite
 
 | <center>No.</center> | <center>Gem</center> | <center>Version</center> |
