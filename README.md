@@ -16,6 +16,7 @@ Proyek ini adalah kelanjutan dari proyek sebelumnya yang hanya berupa Ruby *scri
 | 3 | [**HTTParty**](https://rubygems.org/gems/httparty) | `0.18.1` |
 | 4 | [**Nokogiri**](https://rubygems.org/gems/nokogiri) | `1.10.9` |
 | 5 | [**Whenever**](https://rubygems/gems/whenever) | `1.0` |
+| 6 | [**ChartKick**](https://chartkick.com/) | `3.3.1` |
 
 ## Menjalankan Script
 
@@ -64,4 +65,6 @@ Hal-hal yang perlu dipastikan akan proses automatisasi berjalan dengan baik.
 
 [https://covid19-indo-harian.herokuapp.com/](https://covid19-indo-harian.herokuapp.com/)
 
-![gambar_1](https://i.postimg.cc/s2nKc9WK/Firefox-Screenshot-2020-07-04-T00-35-25-745-Z.png)
+![gambar_1](https://i.postimg.cc/R0wqxfwm/Firefox-Screenshot-2020-07-04-T16-00-49-860-Z.png)
+
+![gambar_2](https://i.postimg.cc/pTxrWTBF/Firefox-Screenshot-2020-07-04-T16-04-37-542-Z.png)
