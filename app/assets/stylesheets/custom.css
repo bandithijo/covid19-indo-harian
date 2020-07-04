@@ -39,3 +39,7 @@ th {
 .nobr {
   white-space: nowrap;
 }
+
+.legend {
+  margin-top: 20px;
+}
