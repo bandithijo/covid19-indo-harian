@@ -20,6 +20,9 @@
 
 # Learn more: http://github.com/javan/whenever
 
+# Every change this schedule.rb, please update the cronjob list with:
+# $ whenever --update-crontab
+
 env :PATH, ENV['PATH']
 set :environment, "development"
 set :output, 'log/rake.log'
@@ -34,5 +37,8 @@ end
 
 project_dir = `echo $PWD`.strip
 every 1.day, at: ['5.05 pm'] do
-  command "cd #{project_dir}; git push -u origin master; git push -u heroku master"
+  command "cd #{project_dir}; \
+           git push -u origin master; \
+           git push -u heroku master; \
+           heroku run rake scraper:run"
 end
