@@ -1,6 +1,6 @@
 body {
-  font-family: 'Fira Sans';
-  font-size: 11px;
+  font-family: 'Fira Sans' !important;
+  font-size: 11px !important;
 }
 
 h1 {
@@ -25,7 +25,8 @@ th {
   background-color: black;
   color: white;
   position: sticky;
-  top: 77px;
+  /* top: 77px; */
+  top: 105px;
 }
 
 .hold {
@@ -34,12 +35,23 @@ th {
   padding: 10px 0 0 0;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .nobr {
   white-space: nowrap;
 }
 
-.legend {
+.legend,
+.chart {
   margin-top: 20px;
+}
+
+.legend table {
+  font-size: 9px !important;
+}
+
+.line-chart {
+  margin-top: 30px;
+  /* width: 70%; */
 }
