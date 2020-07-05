@@ -65,6 +65,6 @@ Hal-hal yang perlu dipastikan akan proses automatisasi berjalan dengan baik.
 
 [https://covid19-indo-harian.herokuapp.com/](https://covid19-indo-harian.herokuapp.com/)
 
-![gambar_1](https://i.postimg.cc/R0wqxfwm/Firefox-Screenshot-2020-07-04-T16-00-49-860-Z.png)
+![gambar_1](https://i.postimg.cc/zBvzXPQn/Firefox-Screenshot-2020-07-05-T02-37-29-004-Z.png)
 
-![gambar_2](https://i.postimg.cc/pTxrWTBF/Firefox-Screenshot-2020-07-04-T16-04-37-542-Z.png)
+![gambar_2](https://i.postimg.cc/d1fq7jMg/Firefox-Screenshot-2020-07-05-T02-38-11-020-Z.png)
