@@ -60,3 +60,7 @@ th {
   background-color: #B10000;
   border-radius: 1.5px;
 }
+
+a, a:hover, a:visited {
+  color: #B10000;
+}
