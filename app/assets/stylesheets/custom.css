@@ -1,9 +1,9 @@
 body {
   font-family: 'Fira Sans' !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
 }
 
-h1 {
+h1, h2 {
   margin: 0;
 }
 
@@ -12,27 +12,26 @@ p {
   padding: 0 0 10px 0;
 }
 
-table {
-  border-collapse: collapse;
-  margin-top: -5px;
+.table-kasus {
+  width: 70%;
 }
 
-table, th, td {
-  border: 1px solid black;
+table {
+  margin-top: 6px;
 }
 
 th {
-  background-color: black;
-  color: white;
+  background-color: #363636;
+  color: white !important;
   position: sticky;
-  /* top: 77px; */
-  top: 105px;
+  text-align: center !important;
+  top: 170px;
 }
 
 .hold {
   background-color: white;
   margin-top: -10px;
-  padding: 10px 0 0 0;
+  padding: 10px 0 5px 0;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -48,7 +47,7 @@ th {
 }
 
 .legend table {
-  font-size: 9px !important;
+  font-size: 10px !important;
 }
 
 .line-chart {
@@ -61,6 +60,22 @@ th {
   border-radius: 1.5px;
 }
 
-a, a:hover, a:visited {
+.nav {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a:link, a:hover, a:visited, a:active {
   color: #B10000;
+}
+
+/* Override Bulma Class */
+
+h1.title.is-1 {
+  margin-bottom: 10px;
+}
+
+h2.subtitle.is-2,
+h4.subtitle.is-4 {
+  margin-bottom: 0;
 }

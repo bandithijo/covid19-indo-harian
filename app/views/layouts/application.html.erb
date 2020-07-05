@@ -4,7 +4,7 @@
     <title>Tabel Pencatatan COVID-19 Indonesia</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('favicon.png') %>
@@ -14,9 +14,11 @@
   </head>
 
   <body>
-    <%= render 'layouts/header', latest_updates: @latest_updates %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+    <div class="container is-fluid">
+      <%= render 'layouts/header', latest_updates: @latest_updates %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
 <!-- Made with ❤ by Rizqi Nur Assyaufi (bandithijo@gmail.com) - 2020/07/03 -->
