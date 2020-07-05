@@ -6,6 +6,10 @@ Data-data kasus perhari yang ditampilkan pada aplikasi ini adalah data-data yang
 
 Proyek ini adalah kelanjutan dari proyek sebelumnya yang hanya berupa Ruby *script*, [bandithijo/ruby-web-scraper-kemkes](https://github.com/bandithijo/ruby-web-scraper-kemkes).
 
+## Demo
+
+[https://covid19-indo-harian.herokuapp.com/](https://covid19-indo-harian.herokuapp.com/)
+
 ## Prerequisite
 
 | <center>No.</center> | <center>Gem</center> | <center>Version</center> |
@@ -17,6 +21,12 @@ Proyek ini adalah kelanjutan dari proyek sebelumnya yang hanya berupa Ruby *scri
 | 4 | [**Nokogiri**](https://rubygems.org/gems/nokogiri) | `1.10.9` |
 | 5 | [**Whenever**](https://rubygems/gems/whenever) | `1.0` |
 | 6 | [**ChartKick**](https://chartkick.com/) | `3.3.1` |
+
+## Menjalankan Rails Server
+
+```shell
+$ rails server
+```
 
 ## Menjalankan Script
 
@@ -61,9 +71,7 @@ Hal-hal yang perlu dipastikan akan proses automatisasi berjalan dengan baik.
 1. PostgreSQL service sudah berjalan
 2. Cronie service sudah berjalan
 
-## Demo
-
-[https://covid19-indo-harian.herokuapp.com/](https://covid19-indo-harian.herokuapp.com/)
+## Preview
 
 ![gambar_1](https://i.postimg.cc/zBvzXPQn/Firefox-Screenshot-2020-07-05-T02-37-29-004-Z.png)
 
