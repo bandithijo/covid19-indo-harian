@@ -16,7 +16,9 @@
                      filename: "COVID19_INDO_HARIAN - Kasus Positif.png",
                      background: "#ffffff"
                    },
-                   dataset: {borderWidth: 1} %>
+                   dataset: {
+                     borderWidth: 1
+                   } %>
   </div>
   <div class="chart">
     <%= line_chart @data_meninggal_covid,
@@ -46,7 +48,7 @@
                    },
                    dataset: {
                      borderWidth: 1
-                   }%>
+                   } %>
   </div>
   <div class="chart">
     <%= line_chart @data_jumlah_odp,
