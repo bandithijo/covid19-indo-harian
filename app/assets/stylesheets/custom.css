@@ -53,5 +53,10 @@ th {
 
 .line-chart {
   margin-top: 30px;
-  /* width: 70%; */
+}
+
+.turbolinks-progress-bar {
+  height: 3px;
+  background-color: #B10000;
+  border-radius: 1.5px;
 }
