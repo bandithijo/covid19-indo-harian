@@ -27,17 +27,11 @@ env :PATH, ENV['PATH']
 set :environment, "development"
 set :output, 'log/rake.log'
 
-every 1.day, at: ['5.00 pm'] do
-  rake "scraper:run"
-end
-
-every 1.day, at: ['5.04 pm'] do
-  rake "scraper:seed:commit"
-end
-
 project_dir = `echo $PWD`.strip
-every 1.day, at: ['5.05 pm'] do
+every 1.day, at: ['5.00 pm'] do
   command "cd #{project_dir}; \
+           rake scraper:run; \
+           rake scraper:seed:commit; \
            git push -u origin master; \
            git push -u heroku master; \
            heroku run rake scraper:run"
