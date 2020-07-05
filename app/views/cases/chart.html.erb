@@ -12,9 +12,6 @@
                    },
                    dataset: {borderWidth: 1} %>
   </div>
-  <script>
-    Chart.defaults.global.defaultFontFamily = "Fira Sans";
-  </script>
   <div class="chart">
     <%= line_chart @data_meninggal_covid,
                    title: "Grafik Pasien Meninggal",
@@ -75,4 +72,9 @@
                      borderWidth: 1
                    } %>
   </div>
+
+  <!-- For change default font of chart.js canvas -->
+  <script>
+    Chart.defaults.global.defaultFontFamily = "Fira Sans";
+  </script>
 </div>
