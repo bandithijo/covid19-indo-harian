@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <%= render 'layouts/header', latest_updates: @latest_updates %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
