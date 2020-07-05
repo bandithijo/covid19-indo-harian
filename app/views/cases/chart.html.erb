@@ -1,4 +1,10 @@
 <div class="line-chart">
+
+  <!-- For change default font of chart.js canvas -->
+  <script>
+    Chart.defaults.global.defaultFontFamily = "Fira Sans";
+  </script>
+
   <div class="chart">
     <%= line_chart @data_positif_covid,
                    title: "Grafik Kasus Positif",
@@ -72,9 +78,4 @@
                      borderWidth: 1
                    } %>
   </div>
-
-  <!-- For change default font of chart.js canvas -->
-  <script>
-    Chart.defaults.global.defaultFontFamily = "Fira Sans";
-  </script>
 </div>
