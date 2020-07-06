@@ -1,6 +1,6 @@
 <div class="nav">
   <p>
-    <%= link_to 'Tabel', root_path %> |
-    <%= link_to 'Grafik', charts_path %>
+    <%= link_to 'Tabel', root_path, class: "#{'has-text-weight-bold' if action_name == 'index'}" %> |
+    <%= link_to 'Grafik', charts_path, class: "#{'has-text-weight-bold' if action_name == 'chart'}" %>
   </p>
 </div>

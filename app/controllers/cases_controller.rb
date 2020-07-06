@@ -1,7 +1,19 @@
 class CasesController < ApplicationController
   before_action :set_cases, only: [:index, :chart]
 
-  def index; end
+  def index
+    respond_to do |format|
+      format.html
+      format.xlsx {
+        response.headers['Content-Disposition'] = \
+        "attachment; filename=COVID-19_INDO_PERHARI_#{Date.today}.xlsx"
+      }
+      format.csv {
+        send_data @cases.to_csv,
+        filename: "COVID-19_INDO_PERHARI_#{Date.today}.csv"
+      }
+    end
+  end
 
   def chart
     @data_positif_covid = Case.group_by_day(:fetched_at).sum(:positif_covid)
