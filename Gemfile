@@ -41,6 +41,7 @@ gem 'nokogiri',                           '~> 1.10', '>= 1.10.9'
 gem 'whenever',                           '~> 1.0', require: false
 gem 'chartkick',                          '~> 3.3', '>= 3.3.1'
 gem 'groupdate',                          '~> 5.0'
+gem 'bulma-rails',                        '~> 0.9.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

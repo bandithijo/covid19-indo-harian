@@ -1,9 +1,9 @@
 body {
   font-family: 'Fira Sans' !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
 }
 
-h1 {
+h1, h2 {
   margin: 0;
 }
 
@@ -13,26 +13,21 @@ p {
 }
 
 table {
-  border-collapse: collapse;
-  margin-top: -5px;
+  margin-top: 8px;
 }
 
-table, th, td {
-  border: 1px solid black;
+thead tr th {
+  background-color: #363636;
+  color: white !important;
+  text-align: center !important;
+  position: sticky !important;
+  top: 166px !important;
 }
 
-th {
-  background-color: black;
-  color: white;
-  position: sticky;
-  /* top: 77px; */
-  top: 105px;
-}
-
-.hold {
+.container.hold {
   background-color: white;
   margin-top: -10px;
-  padding: 10px 0 0 0;
+  padding: 10px 0 5px 0;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -48,7 +43,7 @@ th {
 }
 
 .legend table {
-  font-size: 9px !important;
+  font-size: 10px !important;
 }
 
 .line-chart {
@@ -61,6 +56,114 @@ th {
   border-radius: 1.5px;
 }
 
-a, a:hover, a:visited {
+.nav {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a:link, a:hover, a:visited, a:active {
   color: #B10000;
+}
+
+/* Override Bulma Class */
+
+h1.title.is-1 {
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+h2.subtitle.is-2,
+h4.subtitle.is-4 {
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+@media screen and (max-width: 360px) {
+  .is-fullwidth-mobile {
+    width: 100%;
+  }
+
+  table {
+    margin-top: 8px;
+  }
+
+  thead tr th {
+    background-color: #363636;
+    color: white !important;
+    text-align: center !important;
+    position: sticky !important;
+    top: 209px !important;
+  }
+}
+
+@media screen and (width: 375px) {
+  .is-fullwidth-mobile {
+    width: 100%;
+  }
+
+  table {
+    margin-top: 8px;
+  }
+
+  thead tr th {
+    background-color: #363636;
+    color: white !important;
+    text-align: center !important;
+    position: sticky !important;
+    top: 176px !important;
+  }
+}
+
+@media screen and (width: 411px) {
+  .is-fullwidth-mobile {
+    width: 100%;
+  }
+
+  table {
+    margin-top: 8px;
+  }
+
+  thead tr th {
+    background-color: #363636;
+    color: white !important;
+    text-align: center !important;
+    position: sticky !important;
+    top: 176px !important;
+  }
+}
+
+@media screen and (width: 414px) {
+  .is-fullwidth-mobile {
+    width: 100%;
+  }
+
+  table {
+    margin-top: 8px;
+  }
+
+  thead tr th {
+    background-color: #363636;
+    color: white !important;
+    text-align: center !important;
+    position: sticky !important;
+    top: 176px !important;
+  }
+}
+
+@media screen and (width: 768px) {
+  .is-fullwidth-mobile {
+    width: 100%;
+  }
+
+  table {
+    margin-top: 8px;
+  }
+
+  thead tr th {
+    background-color: #363636;
+    color: white !important;
+    text-align: center !important;
+    position: sticky !important;
+    top: 135px !important;
+  }
 }
