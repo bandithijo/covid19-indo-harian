@@ -6,7 +6,7 @@ class CasesController < ApplicationController
       format.html
       format.xlsx {
         response.headers['Content-Disposition'] = \
-        'attachment; filename="COVID-19_INDO_PERHARI.xlsx"'
+        "attachment; filename=COVID-19_INDO_PERHARI_#{Date.today}.xlsx"
       }
     end
   end
