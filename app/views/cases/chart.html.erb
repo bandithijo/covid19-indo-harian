@@ -1,4 +1,4 @@
-<div class="line-chart">
+<div class="container is-fluid line-chart">
 
   <!-- For change default font of chart.js canvas -->
   <script>
@@ -8,7 +8,6 @@
   <div class="chart">
     <%= line_chart @data_positif_covid,
                    title: "Grafik Kasus Positif",
-                   width: "70%",
                    colors: ["#B10000"],
                    xtitle: "Tanggal",
                    ytitle: "Kasus Positif",
@@ -23,7 +22,6 @@
   <div class="chart">
     <%= line_chart @data_meninggal_covid,
                    title: "Grafik Pasien Meninggal",
-                   width: "70%",
                    colors: ["#B10000"],
                    xtitle: "Tanggal",
                    ytitle: "Pasien Meninggal",
@@ -38,7 +36,6 @@
   <div class="chart">
     <%= line_chart @data_sembuh_covid,
                    title: "Grafik Pasien Sembuh",
-                   width: "70%",
                    colors: ["#B10000"],
                    xtitle: "Tanggal",
                    ytitle: "Pasien Sembuh",
@@ -53,7 +50,6 @@
   <div class="chart">
     <%= line_chart @data_jumlah_odp,
                    title: "Grafik Jumlah ODP",
-                   width: "70%",
                    colors: ["#B10000"],
                    xtitle: "Tanggal",
                    ytitle: "ODP",
@@ -68,7 +64,6 @@
   <div class="chart">
     <%= line_chart @data_jumlah_pdp,
                    title: "Grafik Jumlah PDP",
-                   width: "70%",
                    colors: ["#B10000"],
                    xtitle: "Tanggal",
                    ytitle: "PDP",

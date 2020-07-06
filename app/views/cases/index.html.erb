@@ -1,171 +1,177 @@
-<table class="table-kasus table is-bordered is-hoverable">
-  <tr>
-    <th>No.</th>
-    <th>Tanggal</th>
-    <th>Total Kasus</th>
-    <th>Kasus<br><span class="nobr">(Hari ini)</span></th>
-    <th>Meninggal</th>
-    <th>Meninggal<br><span class="nobr">(Hari ini)</span></th>
-    <th>Sembuh</th>
-    <th>Sembuh<br><span class="nobr">(Hari ini)</span></th>
-    <th>ODP</th>
-    <th>ODP<br><span class="nobr">(Hari ini)</span></th>
-    <th>PDP</th>
-    <th>PDP<br><span class="nobr">(Hari ini)</span></th>
-    <th>Aktif</th>
-  </tr>
-  <% @cases.each.with_index(1) do |kasus, index| %>
-    <% positif_covid_kemarin   = @cases[index-2].positif_covid %>
-    <% meninggal_covid_kemarin = @cases[index-2].meninggal_covid %>
-    <% sembuh_covid_kemarin    = @cases[index-2].sembuh_covid %>
-    <% jumlah_odp_kemarin      = @cases[index-2].jumlah_odp %>
-    <% jumlah_pdp_kemarin      = @cases[index-2].jumlah_pdp %>
-    <tr>
-      <td class="has-text-left">
-        <% if index == @cases.last.id %>
-          <mark><b><%= index %></b></mark>
-        <% else %>
-          <%= index %>
-        <% end %>
-      </td>
-      <td class="has-text-center">
-        <% if kasus.fetched_at == @cases.last.fetched_at %>
-        <span class="nobr"><mark><b><%= kasus.fetched_at %></b></mark></span>
-        <% else %>
-          <span class="nobr"><%= kasus.fetched_at %></span>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.positif_covid == @cases.last.positif_covid %>
-          <mark><b><%= number_with_delimiter(kasus.positif_covid) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(kasus.positif_covid) %>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.positif_covid == @cases.last.positif_covid %>
-          <mark><b><%= number_with_delimiter(index == 1 ? 0 : kasus.positif_covid.to_i - positif_covid_kemarin.to_i) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(index == 1 ? 0 : kasus.positif_covid.to_i - positif_covid_kemarin.to_i) %>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.meninggal_covid == @cases.last.meninggal_covid %>
-          <mark><b><%= number_with_delimiter(kasus.meninggal_covid) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(kasus.meninggal_covid) %>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.meninggal_covid == @cases.last.meninggal_covid %>
-          <mark><b><%= number_with_delimiter(index == 1 ? 0 : kasus.meninggal_covid.to_i - meninggal_covid_kemarin.to_i) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(index == 1 ? 0 : kasus.meninggal_covid.to_i - meninggal_covid_kemarin.to_i) %>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.sembuh_covid == @cases.last.sembuh_covid %>
-          <mark><b><%= number_with_delimiter(kasus.sembuh_covid) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(kasus.sembuh_covid) %>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.sembuh_covid == @cases.last.sembuh_covid %>
-          <mark><b><%= number_with_delimiter(index == 1 ? 0 : kasus.sembuh_covid.to_i - sembuh_covid_kemarin.to_i) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(index == 1 ? 0 : kasus.sembuh_covid.to_i - sembuh_covid_kemarin.to_i) %>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.jumlah_odp == @cases.last.jumlah_odp %>
-          <mark><b><%= number_with_delimiter(kasus.jumlah_odp) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(kasus.jumlah_odp) %>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.jumlah_odp == @cases.last.jumlah_odp %>
-          <mark><b><%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_odp.to_i - jumlah_odp_kemarin.to_i) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_odp.to_i - jumlah_odp_kemarin.to_i) %>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.jumlah_pdp == @cases.last.jumlah_pdp %>
-          <mark><b><%= number_with_delimiter(kasus.jumlah_pdp) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(kasus.jumlah_pdp) %>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.jumlah_pdp == @cases.last.jumlah_pdp %>
-          <mark><b><%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_pdp.to_i - jumlah_pdp_kemarin.to_i) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_pdp.to_i - jumlah_pdp_kemarin.to_i) %>
-        <% end %>
-      </td>
-      <td class="has-text-right">
-        <% if kasus.positif_covid == @cases.last.positif_covid %>
-          <mark><b><%= number_with_delimiter(kasus.positif_covid.to_i - (kasus.meninggal_covid + kasus.sembuh_covid)) %></b></mark>
-        <% else %>
-          <%= number_with_delimiter(kasus.positif_covid.to_i - (kasus.meninggal_covid + kasus.sembuh_covid)) %>
-        <% end %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-<div class="legend">
-  <h4 class="subtitle is-4">Legenda:</h3>
-  <table class="table is-bordered">
-    <tr>
-      <td class="has-text-right"><b>Tanggal</b></td>
-      <td class="has-text-left">Tanggal perhari</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>Total Kasus</b></td>
-      <td class="has-text-left">Total kasus baru (akumulasi)</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>Kasus (Hari ini)</b></td>
-      <td class="has-text-left">Total kasus baru dalam 24 jam</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>Meninggal</b></td>
-      <td class="has-text-left">Total pasien meninggal (akumulasi)</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>Meninggal (Hari ini)</b></td>
-      <td class="has-text-left">Total pasien meninggal dalam 24 jam</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>Sembuh</b></td>
-      <td class="has-text-left">Total pasien sembuh (akumulasi)</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>Sembuh (Hari ini)</b></td>
-      <td class="has-text-left">Total pasien sembuh dalam 24 jam</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>ODP</b></td>
-      <td class="has-text-left">Total orang dalam pemantauan (akumulasi)</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>ODP (Hari ini)</b></td>
-      <td class="has-text-left">Total orang dalam pemantauan dalam 24 jam</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>PDP</b></td>
-      <td class="has-text-left">Total pasien dalam pengawasan (akumulasi)</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>PDP (Hari ini)</b></td>
-      <td class="has-text-left">Total pasien dalam pengawasan dalam 24 jam</td>
-    </tr>
-    <tr>
-      <td class="has-text-right"><b>Aktif</b></td>
-      <td class="has-text-left">Total kasus yang masih ditangani (TK - (MNGL + SMBH))</td>
-    </tr>
+<div class="container is-fluid">
+  <table class="table is-bordered is-hoverable">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Tanggal</th>
+        <th>Total Kasus</th>
+        <th>Kasus<br><span class="nobr">(Hari ini)</span></th>
+        <th>Meninggal</th>
+        <th>Meninggal<br><span class="nobr">(Hari ini)</span></th>
+        <th>Sembuh</th>
+        <th>Sembuh<br><span class="nobr">(Hari ini)</span></th>
+        <th>ODP</th>
+        <th>ODP<br><span class="nobr">(Hari ini)</span></th>
+        <th>PDP</th>
+        <th>PDP<br><span class="nobr">(Hari ini)</span></th>
+        <th>Aktif</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cases.each.with_index(1) do |kasus, index| %>
+        <% positif_covid_kemarin   = @cases[index-2].positif_covid %>
+        <% meninggal_covid_kemarin = @cases[index-2].meninggal_covid %>
+        <% sembuh_covid_kemarin    = @cases[index-2].sembuh_covid %>
+        <% jumlah_odp_kemarin      = @cases[index-2].jumlah_odp %>
+        <% jumlah_pdp_kemarin      = @cases[index-2].jumlah_pdp %>
+        <tr>
+          <td class="has-text-left">
+            <% if index == @cases.last.id %>
+              <mark><b><%= index %></b></mark>
+            <% else %>
+              <%= index %>
+            <% end %>
+          </td>
+          <td class="has-text-center">
+            <% if kasus.fetched_at == @cases.last.fetched_at %>
+              <span class="nobr"><mark><b><%= kasus.fetched_at %></b></mark></span>
+            <% else %>
+              <span class="nobr"><%= kasus.fetched_at %></span>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.positif_covid == @cases.last.positif_covid %>
+              <mark><b><%= number_with_delimiter(kasus.positif_covid) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(kasus.positif_covid) %>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.positif_covid == @cases.last.positif_covid %>
+              <mark><b><%= number_with_delimiter(index == 1 ? 0 : kasus.positif_covid.to_i - positif_covid_kemarin.to_i) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(index == 1 ? 0 : kasus.positif_covid.to_i - positif_covid_kemarin.to_i) %>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.meninggal_covid == @cases.last.meninggal_covid %>
+              <mark><b><%= number_with_delimiter(kasus.meninggal_covid) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(kasus.meninggal_covid) %>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.meninggal_covid == @cases.last.meninggal_covid %>
+              <mark><b><%= number_with_delimiter(index == 1 ? 0 : kasus.meninggal_covid.to_i - meninggal_covid_kemarin.to_i) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(index == 1 ? 0 : kasus.meninggal_covid.to_i - meninggal_covid_kemarin.to_i) %>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.sembuh_covid == @cases.last.sembuh_covid %>
+              <mark><b><%= number_with_delimiter(kasus.sembuh_covid) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(kasus.sembuh_covid) %>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.sembuh_covid == @cases.last.sembuh_covid %>
+              <mark><b><%= number_with_delimiter(index == 1 ? 0 : kasus.sembuh_covid.to_i - sembuh_covid_kemarin.to_i) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(index == 1 ? 0 : kasus.sembuh_covid.to_i - sembuh_covid_kemarin.to_i) %>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.jumlah_odp == @cases.last.jumlah_odp %>
+              <mark><b><%= number_with_delimiter(kasus.jumlah_odp) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(kasus.jumlah_odp) %>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.jumlah_odp == @cases.last.jumlah_odp %>
+              <mark><b><%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_odp.to_i - jumlah_odp_kemarin.to_i) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_odp.to_i - jumlah_odp_kemarin.to_i) %>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.jumlah_pdp == @cases.last.jumlah_pdp %>
+              <mark><b><%= number_with_delimiter(kasus.jumlah_pdp) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(kasus.jumlah_pdp) %>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.jumlah_pdp == @cases.last.jumlah_pdp %>
+              <mark><b><%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_pdp.to_i - jumlah_pdp_kemarin.to_i) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_pdp.to_i - jumlah_pdp_kemarin.to_i) %>
+            <% end %>
+          </td>
+          <td class="has-text-right">
+            <% if kasus.positif_covid == @cases.last.positif_covid %>
+              <mark><b><%= number_with_delimiter(kasus.positif_covid.to_i - (kasus.meninggal_covid + kasus.sembuh_covid)) %></b></mark>
+            <% else %>
+              <%= number_with_delimiter(kasus.positif_covid.to_i - (kasus.meninggal_covid + kasus.sembuh_covid)) %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
+
+  <div class="legend">
+    <h4 class="subtitle is-4">Legenda:</h3>
+    <table class="table is-bordered">
+      <tr>
+        <td class="has-text-right"><b>Tanggal</b></td>
+        <td class="has-text-left">Tanggal perhari</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>Total Kasus</b></td>
+        <td class="has-text-left">Total kasus baru (akumulasi)</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>Kasus (Hari ini)</b></td>
+        <td class="has-text-left">Total kasus baru dalam 24 jam</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>Meninggal</b></td>
+        <td class="has-text-left">Total pasien meninggal (akumulasi)</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>Meninggal (Hari ini)</b></td>
+        <td class="has-text-left">Total pasien meninggal dalam 24 jam</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>Sembuh</b></td>
+        <td class="has-text-left">Total pasien sembuh (akumulasi)</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>Sembuh (Hari ini)</b></td>
+        <td class="has-text-left">Total pasien sembuh dalam 24 jam</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>ODP</b></td>
+        <td class="has-text-left">Total orang dalam pemantauan (akumulasi)</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>ODP (Hari ini)</b></td>
+        <td class="has-text-left">Total orang dalam pemantauan dalam 24 jam</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>PDP</b></td>
+        <td class="has-text-left">Total pasien dalam pengawasan (akumulasi)</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>PDP (Hari ini)</b></td>
+        <td class="has-text-left">Total pasien dalam pengawasan dalam 24 jam</td>
+      </tr>
+      <tr>
+        <td class="has-text-right"><b>Aktif</b></td>
+        <td class="has-text-left">Total kasus yang masih ditangani (TK - (MNGL + SMBH))</td>
+      </tr>
+    </table>
+  </div>
 </div>
