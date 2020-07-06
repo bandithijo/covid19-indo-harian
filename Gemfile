@@ -42,6 +42,9 @@ gem 'whenever',                           '~> 1.0', require: false
 gem 'chartkick',                          '~> 3.3', '>= 3.3.1'
 gem 'groupdate',                          '~> 5.0'
 gem 'bulma-rails',                        '~> 0.9.0'
+gem 'rubyzip',                            '~> 2.3'
+gem 'caxlsx',                             '~> 3.0', '>= 3.0.1'
+gem 'caxlsx_rails',                       '~> 0.6.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
