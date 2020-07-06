@@ -21,7 +21,7 @@ class Case < ApplicationRecord
     attributes = %w(id fetched_at positif_covid meninggal_covid
                     sembuh_covid jumlah_odp jumlah_pdp)
 
-    CSV.generate(headers: true) do |csv|
+    CSV.generate(headers: true, col_sep: ";") do |csv|
       csv << attributes
 
       all.find_each do |kasus|
