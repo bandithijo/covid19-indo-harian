@@ -1,5 +1,5 @@
 <div class="container is-fluid">
-  <table class="table is-bordered is-hoverable is-fullwidth-mobile">
+  <table class="table is-bordered is-hoverable is-fullwidth-mobile" id="table-case">
     <thead>
       <tr>
         <th class="is-hidden-mobile">No.</th>
@@ -118,6 +118,15 @@
           </td>
         </tr>
       <% end %>
+      <script>
+        var rows = document.querySelectorAll('#table-case tr');
+        // line is zero-based
+        // line is the row number that you want to see into view after scroll
+        rows[<%= @cases.last.id %>].scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+      </script>
     </tbody>
   </table>
 
