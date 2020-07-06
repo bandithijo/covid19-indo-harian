@@ -21,7 +21,7 @@ thead tr th {
   color: white !important;
   text-align: center !important;
   position: sticky !important;
-  top: 166px !important;
+  top: 134px !important;
 }
 
 .container.hold {
@@ -67,12 +67,12 @@ a:link, a:hover, a:visited, a:active {
 
 /* Override Bulma Class */
 
-h1.title.is-1 {
+h1.title.is-size-3 {
   margin-bottom: 20px;
   line-height: 1;
 }
 
-h2.subtitle.is-2,
+h2.subtitle.is-size-4,
 h4.subtitle.is-4 {
   margin-bottom: 0;
   line-height: 1;
