@@ -13,8 +13,7 @@ p {
 }
 
 table {
-  position: relative;
-  margin-top: 9px;
+  margin-top: 8px;
 }
 
 thead tr th {
@@ -22,7 +21,7 @@ thead tr th {
   color: white !important;
   text-align: center !important;
   position: sticky !important;
-  top: 167px !important;
+  top: 166px !important;
 }
 
 .container.hold {
@@ -77,4 +76,94 @@ h2.subtitle.is-2,
 h4.subtitle.is-4 {
   margin-bottom: 0;
   line-height: 1;
+}
+
+@media screen and (max-width: 360px) {
+  .is-fullwidth-mobile {
+    width: 100%;
+  }
+
+  table {
+    margin-top: 8px;
+  }
+
+  thead tr th {
+    background-color: #363636;
+    color: white !important;
+    text-align: center !important;
+    position: sticky !important;
+    top: 209px !important;
+  }
+}
+
+@media screen and (width: 375px) {
+  .is-fullwidth-mobile {
+    width: 100%;
+  }
+
+  table {
+    margin-top: 8px;
+  }
+
+  thead tr th {
+    background-color: #363636;
+    color: white !important;
+    text-align: center !important;
+    position: sticky !important;
+    top: 176px !important;
+  }
+}
+
+@media screen and (width: 411px) {
+  .is-fullwidth-mobile {
+    width: 100%;
+  }
+
+  table {
+    margin-top: 8px;
+  }
+
+  thead tr th {
+    background-color: #363636;
+    color: white !important;
+    text-align: center !important;
+    position: sticky !important;
+    top: 176px !important;
+  }
+}
+
+@media screen and (width: 414px) {
+  .is-fullwidth-mobile {
+    width: 100%;
+  }
+
+  table {
+    margin-top: 8px;
+  }
+
+  thead tr th {
+    background-color: #363636;
+    color: white !important;
+    text-align: center !important;
+    position: sticky !important;
+    top: 176px !important;
+  }
+}
+
+@media screen and (width: 768px) {
+  .is-fullwidth-mobile {
+    width: 100%;
+  }
+
+  table {
+    margin-top: 8px;
+  }
+
+  thead tr th {
+    background-color: #363636;
+    color: white !important;
+    text-align: center !important;
+    position: sticky !important;
+    top: 135px !important;
+  }
 }
