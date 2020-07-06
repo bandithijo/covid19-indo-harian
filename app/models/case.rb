@@ -16,4 +16,17 @@ class Case < ApplicationRecord
             numericality: { only_integer: true}
   validates :fetched_at,
             presence: true
+
+  def self.to_csv
+    attributes = %w(id fetched_at positif_covid meninggal_covid
+                    sembuh_covid jumlah_odp jumlah_pdp)
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+
+      all.find_each do |kasus|
+        csv << attributes.map{ |attr| kasus.send(attr) }
+      end
+    end
+  end
 end

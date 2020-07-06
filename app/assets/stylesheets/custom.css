@@ -97,6 +97,10 @@ h4.subtitle.is-4 {
     position: sticky !important;
     top: 209px !important;
   }
+
+  .buttons .button:not(:last-child):not(.is-fullwidth) {
+    margin-right: 0 !important;
+  }
 }
 
 @media screen and (width: 375px) {

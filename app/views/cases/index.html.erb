@@ -121,9 +121,19 @@
     </tbody>
   </table>
 
-  <div class="pb-5">
-    <%= link_to cases_path(format: "xlsx"), class: "button is-small is-rounded is-danger" do %>
-      <span class="has-text-weight-bold">Export as SpreadSheet</span>
+  <div class="buttons are-small">
+    <%= link_to cases_path(format: "xlsx"), class: "button is-fullwidth-mobile" do %>
+      <span class="icon is-small">
+        <i class="fas fa-file-download"></i>
+      </span>
+      <span class="has-text-weight-normal">Export as SpreadSheet</span>
+    <% end %>
+
+    <%= link_to cases_path(format: "csv"), class: "button is-fullwidth-mobile" do %>
+      <span class="icon is-small">
+        <i class="fas fa-file-download"></i>
+      </span>
+      <span class="has-text-weight-normal">Export as CSV</span>
     <% end %>
   </div>
 
