@@ -121,6 +121,12 @@
     </tbody>
   </table>
 
+  <div class="pb-5">
+    <%= link_to cases_path(format: "xlsx"), class: "button is-small is-rounded is-danger" do %>
+      <span class="has-text-weight-bold">Export as SpreadSheet</span>
+    <% end %>
+  </div>
+
   <div class="is-size-7 is-hidden-desktop is-flex-mobile">
     <b>*Gunakan desktop untuk tampilan tabel yang lebih lengkap.</b>
   </div>

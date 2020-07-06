@@ -77,6 +77,10 @@ h4.subtitle.is-4 {
   line-height: 1;
 }
 
+.is-danger {
+  background-color: #B10000 !important;
+}
+
 @media screen and (max-width: 360px) {
   .is-fullwidth-mobile {
     width: 100%;
