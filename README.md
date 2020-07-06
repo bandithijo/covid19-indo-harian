@@ -8,7 +8,7 @@ Proyek ini adalah kelanjutan dari proyek sebelumnya yang hanya berupa Ruby *scri
 
 ## Demo
 
-[https://covid19-indo-harian.herokuapp.com/](https://covid19-indo-harian.herokuapp.com/)
+[https://bandithijo.github.io/covid19](https://bandithijo.github.io/covid19)
 
 ## Prerequisite
 
