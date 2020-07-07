@@ -32,6 +32,5 @@ every 1.day, at: ['5.00 pm'] do
   command "cd #{project_dir}; \
            rake scraper:run; \
            rake scraper:seed:commit; \
-           git push -u origin master; \
-           git push -u heroku master"
+           git push -u origin master"
 end
