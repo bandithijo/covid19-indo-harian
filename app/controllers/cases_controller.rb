@@ -6,11 +6,11 @@ class CasesController < ApplicationController
       format.html
       format.xlsx {
         response.headers['Content-Disposition'] = \
-        "attachment; filename=COVID-19_INDO_PERHARI_#{Date.today}.xlsx"
+        "attachment; filename=COVID-19_INDO_PERHARI_#{@cases.last.fetched_at}.xlsx"
       }
       format.csv {
         send_data @cases.to_csv,
-        filename: "COVID-19_INDO_PERHARI_#{Date.today}.csv"
+        filename: "COVID-19_INDO_PERHARI_#{@cases.last.fetched_at}.csv"
       }
     end
   end
