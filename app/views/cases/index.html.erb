@@ -120,8 +120,6 @@
       <% end %>
       <script>
         var rows = document.querySelectorAll('#table-case tr');
-        // line is zero-based
-        // line is the row number that you want to see into view after scroll
         rows[<%= @cases.last.id %>].scrollIntoView({
           behavior: 'smooth',
           block: 'center'
@@ -132,15 +130,15 @@
 
   <div class="buttons are-small">
     <%= link_to cases_path(format: "xlsx"), class: "button is-fullwidth-mobile" do %>
-      <span class="icon is-small">
-        <i class="fas fa-file-download"></i>
+      <span class="icon">
+        <%= image_tag 'file-download-solid.svg', width: '12' %>
       </span>
       <span class="has-text-weight-normal">Export as SpreadSheet</span>
     <% end %>
 
     <%= link_to cases_path(format: "csv"), class: "button is-fullwidth-mobile" do %>
-      <span class="icon is-small">
-        <i class="fas fa-file-download"></i>
+      <span class="icon">
+        <%= image_tag 'file-download-solid.svg', width: '12' %>
       </span>
       <span class="has-text-weight-normal">Export as CSV</span>
     <% end %>
