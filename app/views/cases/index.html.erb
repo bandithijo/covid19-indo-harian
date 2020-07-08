@@ -120,7 +120,7 @@
       <% end %>
       <script>
         var rows = document.querySelectorAll('#table-case tr');
-        rows[<%= @cases.last.id %>].scrollIntoView({
+        rows[<%= @cases.size %>].scrollIntoView({
           behavior: 'smooth',
           block: 'center'
         });
