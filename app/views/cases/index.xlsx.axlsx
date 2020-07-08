@@ -7,6 +7,7 @@ wb.add_worksheet(name: "Cases") do |sheet|
   @cases.each do |kasus|
     sheet.add_row [kasus.id, kasus.fetched_at.strftime("%F"),
                    kasus.positif_covid, kasus.meninggal_covid,
-                   kasus.sembuh_covid, kasus.jumlah_odp, kasus.jumlah_pdp]
+                   kasus.sembuh_covid, kasus.jumlah_odp,
+                   kasus.jumlah_pdp]
   end
 end
