@@ -26,84 +26,84 @@
         <% jumlah_pdp_kemarin      = @cases[index-2].jumlah_pdp %>
         <tr>
           <td class="has-text-left is-hidden-mobile">
-            <% if index == @cases.last.id %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= index %></b></span>
             <% else %>
               <%= index %>
             <% end %>
           </td>
           <td class="has-text-centered">
-            <% if kasus.fetched_at == @cases.last.fetched_at %>
+            <% if @cases.size == index %>
               <span class="nobr has-background-warning"><b><%= kasus.fetched_at %></b></span>
             <% else %>
               <span class="nobr"><%= kasus.fetched_at %></span>
             <% end %>
           </td>
           <td class="has-text-right">
-            <% if kasus.positif_covid == @cases.last.positif_covid %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= number_with_delimiter(kasus.positif_covid) %></b></span>
             <% else %>
               <%= number_with_delimiter(kasus.positif_covid) %>
             <% end %>
           </td>
           <td class="has-text-right">
-            <% if kasus.positif_covid == @cases.last.positif_covid %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= number_with_delimiter(index == 1 ? 0 : kasus.positif_covid.to_i - positif_covid_kemarin.to_i) %></b></span>
             <% else %>
               <%= number_with_delimiter(index == 1 ? 0 : kasus.positif_covid.to_i - positif_covid_kemarin.to_i) %>
             <% end %>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <% if kasus.meninggal_covid == @cases.last.meninggal_covid %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= number_with_delimiter(kasus.meninggal_covid) %></b></span>
             <% else %>
               <%= number_with_delimiter(kasus.meninggal_covid) %>
             <% end %>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <% if kasus.meninggal_covid == @cases.last.meninggal_covid %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= number_with_delimiter(index == 1 ? 0 : kasus.meninggal_covid.to_i - meninggal_covid_kemarin.to_i) %></b></span>
             <% else %>
               <%= number_with_delimiter(index == 1 ? 0 : kasus.meninggal_covid.to_i - meninggal_covid_kemarin.to_i) %>
             <% end %>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <% if kasus.sembuh_covid == @cases.last.sembuh_covid %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= number_with_delimiter(kasus.sembuh_covid) %></b></span>
             <% else %>
               <%= number_with_delimiter(kasus.sembuh_covid) %>
             <% end %>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <% if kasus.sembuh_covid == @cases.last.sembuh_covid %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= number_with_delimiter(index == 1 ? 0 : kasus.sembuh_covid.to_i - sembuh_covid_kemarin.to_i) %></b></span>
             <% else %>
               <%= number_with_delimiter(index == 1 ? 0 : kasus.sembuh_covid.to_i - sembuh_covid_kemarin.to_i) %>
             <% end %>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <% if kasus.jumlah_odp == @cases.last.jumlah_odp %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= number_with_delimiter(kasus.jumlah_odp) %></b></span>
             <% else %>
               <%= number_with_delimiter(kasus.jumlah_odp) %>
             <% end %>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <% if kasus.jumlah_odp == @cases.last.jumlah_odp %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_odp.to_i - jumlah_odp_kemarin.to_i) %></b></span>
             <% else %>
               <%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_odp.to_i - jumlah_odp_kemarin.to_i) %>
             <% end %>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <% if kasus.jumlah_pdp == @cases.last.jumlah_pdp %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= number_with_delimiter(kasus.jumlah_pdp) %></b></span>
             <% else %>
               <%= number_with_delimiter(kasus.jumlah_pdp) %>
             <% end %>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <% if kasus.jumlah_pdp == @cases.last.jumlah_pdp %>
+            <% if @cases.size == index %>
               <span class="has-background-warning"><b><%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_pdp.to_i - jumlah_pdp_kemarin.to_i) %></b></span>
             <% else %>
               <%= number_with_delimiter(index == 1 ? 0 : kasus.jumlah_pdp.to_i - jumlah_pdp_kemarin.to_i) %>
