@@ -1330,3 +1330,13 @@ data = Case.create(
   fetched_at:      '2020-07-10'
 )
 puts "Insert data => #{data.fetched_at}"
+
+data = Case.create(
+  positif_covid:   74018,
+  sembuh_covid:    34719,
+  meninggal_covid: 3535,
+  jumlah_odp:      34887,
+  jumlah_pdp:      13752,
+  fetched_at:      '2020-07-11'
+)
+puts "Insert data => #{data.fetched_at}"
