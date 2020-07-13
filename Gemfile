@@ -44,6 +44,10 @@ gem 'groupdate',                          '~> 5.0'
 gem 'bulma-rails',                        '~> 0.9.0'
 gem 'caxlsx',                             '~> 3.0', '>= 3.0.1'
 gem 'caxlsx_rails',                       '~> 0.6.2'
+gem 'capistrano',                         '~> 3.11'
+gem 'capistrano-rails',                   '~> 1.4'
+gem 'capistrano-passenger',               '~> 0.2.0'
+gem 'capistrano-rbenv',                   '~> 2.1', '>= 2.1.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
