@@ -10,18 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_03_051337) do
+ActiveRecord::Schema.define(version: 2020_07_14_055856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cases", force: :cascade do |t|
-    t.integer "positif_covid"
-    t.integer "sembuh_covid"
-    t.integer "meninggal_covid"
-    t.integer "jumlah_odp"
-    t.integer "jumlah_pdp"
+    t.integer "positif_covid", default: 0
+    t.integer "sembuh_covid", default: 0
+    t.integer "meninggal_covid", default: 0
+    t.integer "jumlah_odp", default: 0
+    t.integer "jumlah_pdp", default: 0
     t.date "fetched_at"
+    t.integer "positif_covid_today", default: 0
+    t.integer "sembuh_covid_today", default: 0
+    t.integer "meninggal_covid_today", default: 0
+    t.integer "jumlah_odp_today", default: 0
+    t.integer "jumlah_pdp_today", default: 0
   end
 
 end
