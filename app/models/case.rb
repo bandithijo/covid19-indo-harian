@@ -35,6 +35,7 @@ class Case < ApplicationRecord
         meninggal_covid_today: (kasus_today.meninggal_covid - kasus_yesterday.meninggal_covid),
         jumlah_odp_today: (kasus_today.jumlah_odp - kasus_yesterday.jumlah_odp),
         jumlah_pdp_today: (kasus_today.jumlah_pdp - kasus_yesterday.jumlah_pdp),
+        aktif: (kasus_today.positif_covid - (kasus_today.meninggal_covid + kasus_today.sembuh_covid))
       )
     end
   end
