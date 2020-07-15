@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_055856) do
     t.integer "meninggal_covid_today", default: 0
     t.integer "jumlah_odp_today", default: 0
     t.integer "jumlah_pdp_today", default: 0
+    t.integer "aktif", default: 0
   end
 
 end
