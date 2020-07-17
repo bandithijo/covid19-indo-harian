@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CasesController < ApplicationController
   before_action :set_cases, only: [:index, :chart]
 
