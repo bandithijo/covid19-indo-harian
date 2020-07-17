@@ -1,9 +1,9 @@
 class Case < ApplicationRecord
   after_create :calculate_todays_data
 
-  validates :positif_covid, :sembuh_covid, :meninggal_covid, :jumlah_odp, :jumlah_pdp,
+  validates :positif_covid, :sembuh_covid, :meninggal_covid, :jumlah_suspek, :jumlah_spesimen,
             :positif_covid_today, :sembuh_covid_today, :meninggal_covid_today,
-            :jumlah_odp_today, :jumlah_pdp_today,
+            :jumlah_suspek_today, :jumlah_spesimen_today,
             presence: true,
             numericality: { only_integer: true}
   validates :fetched_at,
@@ -11,7 +11,7 @@ class Case < ApplicationRecord
 
   def self.to_csv
     attributes = %w(id fetched_at positif_covid meninggal_covid
-                    sembuh_covid jumlah_odp jumlah_pdp)
+                    sembuh_covid jumlah_suspek jumlah_spesimen)
 
     CSV.generate(headers: true, col_sep: ";") do |csv|
       csv << attributes
@@ -33,8 +33,8 @@ class Case < ApplicationRecord
         positif_covid_today: (kasus_today.positif_covid - kasus_yesterday.positif_covid),
         sembuh_covid_today: (kasus_today.sembuh_covid - kasus_yesterday.sembuh_covid),
         meninggal_covid_today: (kasus_today.meninggal_covid - kasus_yesterday.meninggal_covid),
-        jumlah_odp_today: (kasus_today.jumlah_odp - kasus_yesterday.jumlah_odp),
-        jumlah_pdp_today: (kasus_today.jumlah_pdp - kasus_yesterday.jumlah_pdp),
+        jumlah_suspek_today: (kasus_today.jumlah_suspek - kasus_yesterday.jumlah_suspek),
+        jumlah_spesimen_today: (kasus_today.jumlah_spesimen - kasus_yesterday.jumlah_spesimen),
         aktif: (kasus_today.positif_covid - (kasus_today.meninggal_covid + kasus_today.sembuh_covid))
       )
     end

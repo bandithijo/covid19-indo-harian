@@ -48,11 +48,11 @@
                    } %>
   </div>
   <div class="chart">
-    <%= line_chart @data_jumlah_odp,
-                   title: "Grafik Jumlah ODP",
+    <%= line_chart @data_jumlah_suspek,
+                   title: "Grafik Jumlah Suspek",
                    colors: ["#B10000"],
                    download: {
-                     filename: "COVID19_INDO_HARIAN - ODP.png",
+                     filename: "COVID19_INDO_HARIAN - Suspek.png",
                      background: "#ffffff"
                    },
                    dataset: {
@@ -60,11 +60,11 @@
                    } %>
   </div>
   <div class="chart">
-    <%= line_chart @data_jumlah_pdp,
-                   title: "Grafik Jumlah PDP",
+    <%= line_chart @data_jumlah_spesimen,
+                   title: "Grafik Jumlah Spesimen",
                    colors: ["#B10000"],
                    download: {
-                     filename: "COVID19_INDO_HARIAN - PDP.png",
+                     filename: "COVID19_INDO_HARIAN - Spesimen.png",
                      background: "#ffffff"
                    },
                    dataset: {

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_14_055856) do
+ActiveRecord::Schema.define(version: 2020_07_17_010303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,14 +19,14 @@ ActiveRecord::Schema.define(version: 2020_07_14_055856) do
     t.integer "positif_covid", default: 0
     t.integer "sembuh_covid", default: 0
     t.integer "meninggal_covid", default: 0
-    t.integer "jumlah_odp", default: 0
-    t.integer "jumlah_pdp", default: 0
+    t.integer "jumlah_suspek", default: 0
+    t.integer "jumlah_spesimen", default: 0
     t.date "fetched_at"
     t.integer "positif_covid_today", default: 0
     t.integer "sembuh_covid_today", default: 0
     t.integer "meninggal_covid_today", default: 0
-    t.integer "jumlah_odp_today", default: 0
-    t.integer "jumlah_pdp_today", default: 0
+    t.integer "jumlah_suspek_today", default: 0
+    t.integer "jumlah_spesimen_today", default: 0
     t.integer "aktif", default: 0
   end
 
