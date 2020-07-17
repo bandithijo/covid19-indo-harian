@@ -62,11 +62,13 @@
         </tr>
       <% end %>
       <script>
+      window.onload = function() {
         var rows = document.querySelectorAll('#table-case tr');
         rows[<%= @cases.size %>].scrollIntoView({
           behavior: 'smooth',
           block: 'center'
         });
+      }
       </script>
     </tbody>
   </table>
