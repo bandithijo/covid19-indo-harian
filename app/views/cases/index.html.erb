@@ -10,10 +10,10 @@
         <th class="is-hidden-mobile">Meninggal<br><span class="nobr">(Hari ini)</span></th>
         <th class="is-hidden-mobile">Sembuh</th>
         <th class="is-hidden-mobile">Sembuh<br><span class="nobr">(Hari ini)</span></th>
-        <th class="is-hidden-mobile">ODP</th>
-        <th class="is-hidden-mobile">ODP<br><span class="nobr">(Hari ini)</span></th>
-        <th class="is-hidden-mobile">PDP</th>
-        <th class="is-hidden-mobile">PDP<br><span class="nobr">(Hari ini)</span></th>
+        <th class="is-hidden-mobile">Suspek</th>
+        <th class="is-hidden-mobile">Suspek<br><span class="nobr">(Hari ini)</span></th>
+        <th class="is-hidden-mobile">Spesimen</th>
+        <th class="is-hidden-mobile">Spesimen<br><span class="nobr">(Hari ini)</span></th>
         <th class="is-hidden-mobile">Aktif</th>
       </tr>
     </thead>
@@ -45,16 +45,16 @@
             <span class="<%= 'has-background-warning has-text-weight-bold' if @cases.size == index %>"><%= number_with_delimiter(kasus.sembuh_covid_today) %></span>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <span class="<%= 'has-background-warning has-text-weight-bold' if @cases.size == index %>"><%= number_with_delimiter(kasus.jumlah_odp) %></span>
+            <span class="<%= 'has-background-warning has-text-weight-bold' if @cases.size == index %>"><%= number_with_delimiter(kasus.jumlah_suspek) %></span>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <span class="<%= 'has-background-warning has-text-weight-bold' if @cases.size == index %>"><%= number_with_delimiter(kasus.jumlah_odp_today) %></span>
+            <span class="<%= 'has-background-warning has-text-weight-bold' if @cases.size == index %>"><%= number_with_delimiter(kasus.jumlah_suspek_today) %></span>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <span class="<%= 'has-background-warning has-text-weight-bold' if @cases.size == index %>"><%= number_with_delimiter(kasus.jumlah_pdp) %></span>
+            <span class="<%= 'has-background-warning has-text-weight-bold' if @cases.size == index %>"><%= number_with_delimiter(kasus.jumlah_spesimen) %></span>
           </td>
           <td class="has-text-right is-hidden-mobile">
-            <span class="<%= 'has-background-warning has-text-weight-bold' if @cases.size == index %>"><%= number_with_delimiter(kasus.jumlah_pdp_today) %></span>
+            <span class="<%= 'has-background-warning has-text-weight-bold' if @cases.size == index %>"><%= number_with_delimiter(kasus.jumlah_spesimen_today) %></span>
           </td>
           <td class="has-text-right is-hidden-mobile">
             <span class="<%= 'has-background-warning has-text-weight-bold' if @cases.size == index %>"><%= number_with_delimiter(kasus.aktif) %></span>
@@ -65,7 +65,7 @@
         var rows = document.querySelectorAll('#table-case tr');
         rows[<%= @cases.size %>].scrollIntoView({
           behavior: 'smooth',
-          block: 'center'
+          block: 'end'
         });
       </script>
     </tbody>
@@ -123,19 +123,19 @@
         <td class="has-text-left">Total pasien sembuh dalam 24 jam</td>
       </tr>
       <tr>
-        <td class="has-text-right"><b>ODP</b></td>
+        <td class="has-text-right"><b>Suspek</b></td>
         <td class="has-text-left">Total orang dalam pemantauan (akumulasi)</td>
       </tr>
       <tr>
-        <td class="has-text-right"><b>ODP (Hari ini)</b></td>
+        <td class="has-text-right"><b>Suspek (Hari ini)</b></td>
         <td class="has-text-left">Total orang dalam pemantauan dalam 24 jam</td>
       </tr>
       <tr>
-        <td class="has-text-right"><b>PDP</b></td>
+        <td class="has-text-right"><b>Spesimen</b></td>
         <td class="has-text-left">Total pasien dalam pengawasan (akumulasi)</td>
       </tr>
       <tr>
-        <td class="has-text-right"><b>PDP (Hari ini)</b></td>
+        <td class="has-text-right"><b>Spesimen (Hari ini)</b></td>
         <td class="has-text-left">Total pasien dalam pengawasan dalam 24 jam</td>
       </tr>
       <tr>

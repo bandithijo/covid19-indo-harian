@@ -21,7 +21,21 @@
                    },
                    dataset: {
                      borderWidth: 1
-                   } %>
+                   },
+                   discrete: true %>
+  </div>
+  <div class="chart">
+    <%= line_chart @data_positif_covid_today,
+                   title: "Grafik Kasus Positif (Hari ini)",
+                   colors: ["#B10000"],
+                   download: {
+                     filename: "COVID19_INDO_HARIAN - Kasus Positif (Hari ini).png",
+                     background: "#ffffff"
+                   },
+                   dataset: {
+                     borderWidth: 1
+                   },
+                   discrete: true %>
   </div>
   <div class="chart">
     <%= line_chart @data_meninggal_covid,
@@ -33,7 +47,21 @@
                    },
                    dataset: {
                      borderWidth: 1
-                   } %>
+                   },
+                   discrete: true %>
+  </div>
+  <div class="chart">
+    <%= line_chart @data_meninggal_covid_today,
+                   title: "Grafik Pasien Meninggal (Hari ini)",
+                   colors: ["#B10000"],
+                   download: {
+                     filename: "COVID19_INDO_HARIAN - Pasien Meninggal (Hari ini).png",
+                     background: "#ffffff"
+                   },
+                   dataset: {
+                     borderWidth: 1
+                   },
+                   discrete: true %>
   </div>
   <div class="chart">
     <%= line_chart @data_sembuh_covid,
@@ -45,30 +73,72 @@
                    },
                    dataset: {
                      borderWidth: 1
-                   } %>
+                   },
+                   discrete: true %>
   </div>
   <div class="chart">
-    <%= line_chart @data_jumlah_odp,
-                   title: "Grafik Jumlah ODP",
+    <%= line_chart @data_sembuh_covid_today,
+                   title: "Grafik Pasien Sembuh (Hari ini)",
                    colors: ["#B10000"],
                    download: {
-                     filename: "COVID19_INDO_HARIAN - ODP.png",
+                     filename: "COVID19_INDO_HARIAN - Pasien Sembuh (Hari ini).png",
                      background: "#ffffff"
                    },
                    dataset: {
                      borderWidth: 1
-                   } %>
+                   },
+                   discrete: true %>
   </div>
   <div class="chart">
-    <%= line_chart @data_jumlah_pdp,
-                   title: "Grafik Jumlah PDP",
+    <%= line_chart @data_jumlah_suspek,
+                   title: "Grafik Jumlah Suspek",
                    colors: ["#B10000"],
                    download: {
-                     filename: "COVID19_INDO_HARIAN - PDP.png",
+                     filename: "COVID19_INDO_HARIAN - Suspek.png",
                      background: "#ffffff"
                    },
                    dataset: {
                      borderWidth: 1
-                   } %>
+                   },
+                   discrete: true %>
+  </div>
+  <div class="chart">
+    <%= line_chart @data_jumlah_suspek_today,
+                   title: "Grafik Jumlah Suspek (Hari ini)",
+                   colors: ["#B10000"],
+                   download: {
+                     filename: "COVID19_INDO_HARIAN - Suspek (Hari ini).png",
+                     background: "#ffffff"
+                   },
+                   dataset: {
+                     borderWidth: 1
+                   },
+                   discrete: true %>
+  </div>
+  <div class="chart">
+    <%= line_chart @data_jumlah_spesimen,
+                   title: "Grafik Jumlah Spesimen",
+                   colors: ["#B10000"],
+                   download: {
+                     filename: "COVID19_INDO_HARIAN - Spesimen.png",
+                     background: "#ffffff"
+                   },
+                   dataset: {
+                     borderWidth: 1
+                   },
+                   discrete: true %>
+  </div>
+  <div class="chart">
+    <%= line_chart @data_jumlah_spesimen_today,
+                   title: "Grafik Jumlah Spesimen (Hari ini)",
+                   colors: ["#B10000"],
+                   download: {
+                     filename: "COVID19_INDO_HARIAN - Spesimen (Hari ini).png",
+                     background: "#ffffff"
+                   },
+                   dataset: {
+                     borderWidth: 1
+                   },
+                   discrete: true %>
   </div>
 </div>
