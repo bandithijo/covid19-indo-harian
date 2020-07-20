@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   root 'cases#index'
   resources :cases, only: [:index, :grafik]
   get 'charts', to: 'cases#chart'
+
+  namespace :api do
+    resources :cases, only: [:index, :show]
+  end
 end
