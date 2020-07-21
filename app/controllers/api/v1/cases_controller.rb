@@ -1,4 +1,4 @@
-class Api::CasesController < ApplicationController
+class Api::V1::CasesController < ApplicationController
   def index
     @cases = Case.all
     render :json => @cases.to_json, :status => :ok
@@ -6,6 +6,6 @@ class Api::CasesController < ApplicationController
 
   def show
     @case = Case.find(params[:id])
-    render :json => @case.to_json, :status => :ok
+    render json: @case.to_json, status: :ok
   end
 end

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'charts', to: 'cases#chart'
 
   namespace :api do
-    resources :cases, only: [:index, :show]
+    namespace :v1 do
+      resources :cases, only: [:index, :show]
+    end
   end
 end
