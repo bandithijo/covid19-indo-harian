@@ -1410,3 +1410,53 @@ data = Case.create(
   fetched_at:      '2020-07-18'
 )
 puts "Insert data => #{data.fetched_at}"
+
+data = Case.create(
+  positif_covid:   86521,
+  sembuh_covid:    45401,
+  meninggal_covid: 4143,
+  jumlah_suspek:   37505,
+  jumlah_spesimen: 20504,
+  fetched_at:      '2020-07-19'
+)
+puts "Insert data => #{data.fetched_at}"
+
+data = Case.create(
+  positif_covid:   88214,
+  sembuh_covid:    46977,
+  meninggal_covid: 4239,
+  jumlah_suspek:   36380,
+  jumlah_spesimen: 14027,
+  fetched_at:      '2020-07-20'
+)
+puts "Insert data => #{data.fetched_at}"
+
+data = Case.create(
+  positif_covid:   89869,
+  sembuh_covid:    48466,
+  meninggal_covid: 4320,
+  jumlah_suspek:   44003,
+  jumlah_spesimen: 22262,
+  fetched_at:      '2020-07-21'
+)
+puts "Insert data => #{data.fetched_at}"
+
+data = Case.create(
+  positif_covid:   91751,
+  sembuh_covid:    50255,
+  meninggal_covid: 4459,
+  jumlah_suspek:   44222,
+  jumlah_spesimen: 25302,
+  fetched_at:      '2020-07-22'
+)
+puts "Insert data => #{data.fetched_at}"
+
+data = Case.create(
+  positif_covid:   93657,
+  sembuh_covid:    52164,
+  meninggal_covid: 4576,
+  jumlah_suspek:   47756,
+  jumlah_spesimen: 27815,
+  fetched_at:      '2020-07-23'
+)
+puts "Insert data => #{data.fetched_at}"
