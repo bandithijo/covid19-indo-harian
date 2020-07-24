@@ -123,7 +123,7 @@ def run_scraping
 
       seeds_file = File.join(File.expand_path('../..', __FILE__), '..', 'db', 'seeds.rb')
       File.open(seeds_file, "a") do |f|
-        f.puts "\ndata = Case.create("
+        f.puts "\ndata = Case.new("
         f.puts "  positif_covid:   #{data_input.positif_covid},"
         f.puts "  sembuh_covid:    #{data_input.sembuh_covid},"
         f.puts "  meninggal_covid: #{data_input.meninggal_covid},"
@@ -131,7 +131,7 @@ def run_scraping
         f.puts "  jumlah_spesimen: #{data_input.jumlah_spesimen},"
         f.puts "  fetched_at:      '#{data_input.fetched_at}'"
         f.puts ")"
-        f.puts "puts \"Insert data => \#\{data.fetched_at\}\""
+        f.puts "input_into_cases(data)"
         f.close
       end
     else
