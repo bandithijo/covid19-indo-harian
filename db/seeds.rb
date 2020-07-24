@@ -1120,8 +1120,6 @@ data = Case.new(
 )
 input_into_cases(data)
 
-# ---
-
 data = Case.new(
   positif_covid:   43803,
   sembuh_covid:    17349,
