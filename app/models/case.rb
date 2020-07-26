@@ -11,6 +11,8 @@ class Case < ApplicationRecord
   validates :fetched_at,
             presence: true
 
+  private
+
   def self.to_csv
     attributes = %w[id fetched_at positif_covid positif_covid_today
                     meninggal_covid meninggal_covid_today
@@ -26,8 +28,6 @@ class Case < ApplicationRecord
       end
     end
   end
-
-  private
 
   def calculate_todays_data
     kasus_today     = Case.all[-1]
