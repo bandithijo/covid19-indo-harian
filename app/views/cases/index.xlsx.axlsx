@@ -1,13 +1,19 @@
 wb = xlsx_package.workbook
 
 wb.add_worksheet(name: "Cases") do |sheet|
-  sheet.add_row %w(id fetched_at positif_covid meninggal_covid
-                   sembuh_covid jumlah_suspek jumlah_spesimen)
+  sheet.add_row %w(id fetched_at
+                   positif_covid positif_covid_today
+                   meninggal_covid meninggal_covid_today
+                   sembuh_covid sembuh_covid_today
+                   jumlah_suspek jumlah_suspek_today
+                   jumlah_spesimen jumlah_spesimen_today)
 
   @cases.each do |kasus|
     sheet.add_row [kasus.id, kasus.fetched_at.strftime("%F"),
-                   kasus.positif_covid, kasus.meninggal_covid,
-                   kasus.sembuh_covid, kasus.jumlah_suspek,
-                   kasus.jumlah_spesimen]
+                   kasus.positif_covid, kasus.positif_covid_today,
+                   kasus.meninggal_covid, kasus.meninggal_covid_today,
+                   kasus.sembuh_covid, kasus.sembuh_covid_today,
+                   kasus.jumlah_suspek, kasus.jumlah_suspek_today,
+                   kasus.jumlah_spesimen, kasus.jumlah_spesimen_today]
   end
 end
