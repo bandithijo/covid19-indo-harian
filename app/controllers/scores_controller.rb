@@ -6,7 +6,7 @@ class ScoresController < ApplicationController
   def index
     if params[:search]
       unless params[:search].empty?
-        @data_zona = (Score.all.last.data.select { |data| data[params[:search].upcase] })
+        @data_zona = (Score.all.last.data.find_all { |data| data[params[:search].upcase] })
       else
         @data_zona = Score.all.last.data
       end
