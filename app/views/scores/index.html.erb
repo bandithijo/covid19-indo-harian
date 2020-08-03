@@ -1,9 +1,9 @@
 <div class="container is-fluid mt-1">
-  <table class="table is-bordered is-hoverable is-fullwidth-mobile" id="table-case" style="min-width:580px;">
-    <thead>
+  <table class="table is-bordered is-hoverable is-fullwidth-mobile" id="table-case" style="max-width:580px;">
+    <thead style="z-index:3;">
       <tr>
         <th class="is-hidden-mobile">No.</th>
-        <th>Provinsi</th>
+        <th class="is-hidden-mobile">Provinsi</th>
         <th><span class="nobr">Kota/Kabupaten</span></th>
         <th>Status</th>
       </tr>
@@ -18,21 +18,20 @@
     <tbody>
       <% @data_zona&.each&.with_index(1) do |zona, index| %>
         <tr>
-          <td class="has-text-left is-hidden-mobile">
+          <td class="has-text-left is-hidden-mobile is-vcentered">
             <%= index %>
           </td>
-          <td class="has-text-left">
+          <td class="has-text-left is-hidden-mobile is-vcentered">
             <%= eval(zona).symbolize_keys[:prov] %>
           </td>
-          <td class="has-text-left">
+          <td class="has-text-left is-vcentered">
             <%= highlight(eval(zona).symbolize_keys[:kota], params[:search]) %>
           </td>
-          <td class="has-text-centered">
-            <%= eval(zona).symbolize_keys[:hasil] %>
+          <td class="has-text-centered is-vcentered">
+            <%= raw status_badge(eval(zona).symbolize_keys[:hasil]) %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
-  <%= params[:search] %>
 </div>
