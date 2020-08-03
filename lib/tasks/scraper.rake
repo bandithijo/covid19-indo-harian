@@ -74,6 +74,22 @@ def run_scraping
     exit
   end
 
+  begin
+    zona_target_url     = "https://data.covid19.go.id/public/api/skor.json"
+    zona_unparsed_page  = HTTParty.get(zona_target_url)
+    zona_date    = zona_unparsed_page.parsed_response["tanggal"]
+    zona_data    = zona_unparsed_page.parsed_response["data"]
+    byebug
+  rescue Exception => e
+    puts "ERROR: #{e.message}"
+    exit
+  end
+
+  data_zona_input = Score.new(
+    tanggal: zona_date,
+    data:    zona_data
+  )
+
   data_input = Case.new(
     positif_covid:   data[:positif_covid],
     sembuh_covid:    data[:sembuh_covid],
@@ -82,7 +98,6 @@ def run_scraping
     jumlah_spesimen: data[:jumlah_spesimen],
     fetched_at:      reformat_date(data[:fetched_at])
   )
-  # byebug
 
   if Case.all.size == 0
     puts "PERHATIAN: Database Kosong"
