@@ -23,6 +23,13 @@ thead tr th {
   top: 134px !important;
 }
 
+thead tr td {
+  background-color: #363636;
+  text-align: center !important;
+  position: sticky !important;
+  top: 165px !important;
+}
+
 .container.hold {
   background-color: white;
   margin-top: -10px;
