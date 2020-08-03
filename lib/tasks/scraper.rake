@@ -79,14 +79,14 @@ def run_scraping
     zona_unparsed_page  = HTTParty.get(zona_target_url)
     zona_date    = zona_unparsed_page.parsed_response["tanggal"]
     zona_data    = zona_unparsed_page.parsed_response["data"]
-    byebug
+    # byebug
   rescue Exception => e
     puts "ERROR: #{e.message}"
     exit
   end
 
   data_zona_input = Score.new(
-    tanggal: zona_date,
+    tanggal: reformat_date(zona_date),
     data:    zona_data
   )
 
@@ -99,7 +99,7 @@ def run_scraping
     fetched_at:      reformat_date(data[:fetched_at])
   )
 
-  if Case.all.size == 0
+  if Case.all.size == 0 || Score.all.size == 0
     puts "PERHATIAN: Database Kosong"
     puts "Program akan menjalankan proses seeding..."
     sleep 3
@@ -108,6 +108,8 @@ def run_scraping
     sleep 3
     puts ""
   end
+
+  data_zona_local_last    = Score.all.last
 
   data_local_last          = Case.all.last
   data_local_before_last   = Case.all[-2]
@@ -122,9 +124,31 @@ def run_scraping
   data_old_jumlah_suspek   = data_local_last.jumlah_suspek - data_local_before_last.jumlah_suspek
   data_old_jumlah_spesimen = data_local_last.jumlah_spesimen - data_local_before_last.jumlah_spesimen
 
+  if data_zona_input.valid?
+    if (data_zona_input.tanggal != data_zona_local_last&.tanggal)
+      data_zona_input.save
+      puts "INFO: DATA ZONA TERBARU BERHASIL DIINPUTKAN KE DALAM DATABASE!"
+
+      seeds_file = File.join(File.expand_path('../..', __FILE__), '..', 'db', 'seeds', 'score_seed.rb')
+      File.open(seeds_file, "a") do |f|
+        f.puts "\ndata = Score.new("
+        f.puts "  tanggal: '#{data_zona_input.tanggal}',"
+        f.puts "  data:    #{data_zona_input.data}"
+        f.puts ")"
+        f.puts "input_into_scores(data)"
+        f.close
+      end
+    else
+      puts "INFO: BELUM ADA DATA ZONA BARU UNTUK HARI INI!"
+    end
+  else
+    puts "INFO: Data zona tidak valid!"
+    puts data_zona_input.errors.messages
+  end
+
   if data_input.valid?
-    if (data_input.fetched_at != data_local_last.fetched_at) &&
-       (data_input.positif_covid != data_local_last.positif_covid)
+    if (data_input.fetched_at != data_local_last&.fetched_at) &&
+       (data_input.positif_covid != data_local_last&.positif_covid)
       data_input.save
       puts "INFO: DATA TERBARU BERHASIL DIINPUTKAN KE DALAM DATABASE!"
       puts "Total Pasien Positif (REMOTE): #{data_input.positif_covid}"
@@ -136,7 +160,7 @@ def run_scraping
       puts "Total Suspek                 : #{data_new_jumlah_suspek}"
       puts "Total Spesimen               : #{data_new_jumlah_spesimen}"
 
-      seeds_file = File.join(File.expand_path('../..', __FILE__), '..', 'db', 'seeds.rb')
+      seeds_file = File.join(File.expand_path('../..', __FILE__), '..', 'db', 'seeds', 'case_seed.rb')
       File.open(seeds_file, "a") do |f|
         f.puts "\ndata = Case.new("
         f.puts "  positif_covid:   #{data_input.positif_covid},"
