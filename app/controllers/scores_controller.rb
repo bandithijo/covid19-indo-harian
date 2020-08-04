@@ -4,12 +4,8 @@ class ScoresController < ApplicationController
   before_action :set_scores, only: [:index]
 
   def index
-    if params[:search]
-      unless params[:search].empty?
-        @data_zona = (Score.all.last.data.find_all { |data| data[params[:search].upcase] })
-      else
-        @data_zona = Score.all.last.data
-      end
+    if params[:search] || !params[:search].empty?
+      @data_zona = (Score.all.last.data.find_all { |data| data[params[:search].upcase] })
     else
       @data_zona = Score.all.last.data
     end
