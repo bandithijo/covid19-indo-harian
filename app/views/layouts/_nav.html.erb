@@ -1,6 +1,7 @@
 <div class="nav">
   <p>
-    <%= link_to 'Tabel', root_path, class: "#{'has-text-weight-bold' if action_name == 'index'}" %> |
-    <%= link_to 'Grafik', charts_path, class: "#{'has-text-weight-bold' if action_name == 'chart'}" %>
+    <%= link_to 'Tabel', root_path, class: "#{'has-text-weight-bold' if controller_name == 'cases' && action_name == 'index'}" %> |
+    <%= link_to 'Grafik', grafik_path, class: "#{'has-text-weight-bold' if action_name == 'chart'}" %> |
+    <%= link_to 'Zona Resiko', zona_resiko_path, class: "#{'has-text-weight-bold' if controller_name == 'scores'}" %>
   </p>
 </div>
