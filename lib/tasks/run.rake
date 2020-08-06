@@ -10,7 +10,7 @@ namespace :scraper do
   namespace :seed do
     task :commit do
       system """
-          git add db/seeds.rb
+          git add db/seeds/score_seed.rb db/seeds/case_seed.rb
           git commit -m 'Update: data #{Date.today}'
       """
     end
