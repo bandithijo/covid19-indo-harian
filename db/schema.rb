@@ -35,13 +35,4 @@ ActiveRecord::Schema.define(version: 2020_08_02_230948) do
     t.text "data", default: [], array: true
   end
 
-  create_table "skors", force: :cascade do |t|
-    t.date "tanggal"
-    t.string "prov"
-    t.integer "kode_prov", default: 0
-    t.string "kota"
-    t.string "kode_kota"
-    t.string "hasil"
-  end
-
 end
