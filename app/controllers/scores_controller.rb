@@ -5,9 +5,9 @@ class ScoresController < ApplicationController
 
   def index
     if params[:search] || !params[:search].nil?
-      @data_zona = (Score.all.last.data.find_all { |data| data[params[:search].upcase] })
+      @data_zona = (@scores.last.data.find_all { |data| data[params[:search].upcase] })
     else
-      @data_zona = Score.all.last.data
+      @data_zona = @scores.last.data
     end
   end
 
