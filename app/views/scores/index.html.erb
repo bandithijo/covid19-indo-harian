@@ -6,11 +6,15 @@
         <th class="is-hidden-mobile">Provinsi</th>
         <th><span class="nobr">Kota/Kabupaten</span></th>
         <th>Status</th>
+        <th class="is-hidden-mobile">Status Sebelumnya</th>
       </tr>
       <tr>
-        <td colspan="4" class="pt-0">
+        <td colspan="5" class="pt-0">
           <%= form_tag zona_resiko_path, method: :get do %>
-            <%= text_field_tag :search, params[:search], class: 'input is-small', placeholder: 'Cari Kota/Kabupaten/Provinsi...' %>
+            <%= text_field_tag :search,
+                               params[:search],
+                               class: 'input is-small',
+                               placeholder: 'Cari Kota/Kabupaten/Provinsi...'%>
           <% end %>
         </td>
       </tr>
@@ -29,6 +33,9 @@
           </td>
           <td class="has-text-centered is-vcentered">
             <%= raw status_badge(eval(zona).symbolize_keys[:hasil]) %>
+          </td>
+          <td class="has-text-centered is-vcentered">
+            <%# <%= raw status_badge(eval(zona).symbolize_keys[:hasil]) %1> %>
           </td>
         </tr>
       <% end %>
