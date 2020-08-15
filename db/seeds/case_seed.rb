@@ -1619,3 +1619,83 @@ data = Case.new(
   fetched_at:      '2020-08-07'
 )
 input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   123503,
+  sembuh_covid:    79306,
+  meninggal_covid: 5658,
+  jumlah_suspek:   83624,
+  jumlah_spesimen: 30565,
+  fetched_at:      '2020-08-08'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   125396,
+  sembuh_covid:    80952,
+  meninggal_covid: 5723,
+  jumlah_suspek:   21918,
+  jumlah_spesimen: 86224,
+  fetched_at:      '2020-08-09'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   127083,
+  sembuh_covid:    82236,
+  meninggal_covid: 5765,
+  jumlah_suspek:   84139,
+  jumlah_spesimen: 15836,
+  fetched_at:      '2020-08-10'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   128776,
+  sembuh_covid:    83710,
+  meninggal_covid: 5824,
+  jumlah_suspek:   85928,
+  jumlah_spesimen: 25791,
+  fetched_at:      '2020-08-11'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   130718,
+  sembuh_covid:    85798,
+  meninggal_covid: 5903,
+  jumlah_suspek:   86619,
+  jumlah_spesimen: 26248,
+  fetched_at:      '2020-08-12'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   132816,
+  sembuh_covid:    87558,
+  meninggal_covid: 5968,
+  jumlah_suspek:   76515,
+  jumlah_spesimen: 25814,
+  fetched_at:      '2020-08-13'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   135123,
+  sembuh_covid:    89618,
+  meninggal_covid: 6021,
+  jumlah_suspek:   75257,
+  jumlah_spesimen: 26018,
+  fetched_at:      '2020-08-14'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   137468,
+  sembuh_covid:    91321,
+  meninggal_covid: 6021,
+  jumlah_suspek:   76327,
+  jumlah_spesimen: 27276,
+  fetched_at:      '2020-08-15'
+)
+input_into_cases(data)
