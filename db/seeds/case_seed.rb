@@ -1693,7 +1693,7 @@ input_into_cases(data)
 data = Case.new(
   positif_covid:   137468,
   sembuh_covid:    91321,
-  meninggal_covid: 6021,
+  meninggal_covid: 6071,
   jumlah_suspek:   76327,
   jumlah_spesimen: 27276,
   fetched_at:      '2020-08-15'
