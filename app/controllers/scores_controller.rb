@@ -5,9 +5,9 @@ class ScoresController < ApplicationController
 
   def index
     if params[:search] || !params[:search].nil?
-      @data_zona = (Score.all.last.data.find_all { |data| data[params[:search].upcase] })
+      @data_zona = Score.all.last.data.map { |d| JSON.parse(d.gsub('=>', ':')) }.find_all { |d| d["kota"].include? params[:search].upcase }
     else
-      @data_zona = Score.all.last.data
+      @data_zona = Score.all.last.data.map { |d| JSON.parse(d.gsub('=>', ':')) }
     end
   end
 

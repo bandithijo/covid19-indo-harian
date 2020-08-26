@@ -10,7 +10,7 @@
       <tr>
         <td colspan="4" class="pt-0">
           <%= form_tag zona_resiko_path, method: :get do %>
-            <%= text_field_tag :search, params[:search], class: 'input is-small', placeholder: 'Cari Kota/Kabupaten/Provinsi...' %>
+            <%= text_field_tag :search, params[:search], class: 'input is-small', placeholder: 'Cari Kabupaten/Kota...' %>
           <% end %>
         </td>
       </tr>
@@ -22,13 +22,13 @@
             <%= index %>
           </td>
           <td class="has-text-left is-hidden-mobile is-vcentered">
-            <%= highlight(eval(zona).symbolize_keys[:prov], params[:search]) %>
+            <%= zona.symbolize_keys[:prov] %>
           </td>
           <td class="has-text-left is-vcentered">
-            <%= highlight(eval(zona).symbolize_keys[:kota], params[:search]) %>
+            <%= highlight(zona.symbolize_keys[:kota], params[:search]) %>
           </td>
           <td class="has-text-centered is-vcentered">
-            <%= raw status_badge(eval(zona).symbolize_keys[:hasil]) %>
+            <%= raw status_badge(zona.symbolize_keys[:hasil]) %>
           </td>
         </tr>
       <% end %>
