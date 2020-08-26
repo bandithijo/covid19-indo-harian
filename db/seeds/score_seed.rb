@@ -1,12 +1,15 @@
 def input_into_scores(data)
-  datas = Score.all
-  dates = []
+  scores = Score.all
+  dates  = []
+  datas  = []
 
-  datas.each do |d|
+
+  scores.each do |d|
     dates << d.tanggal
+    datas << d.data
   end
 
-  unless dates.include? data.tanggal
+  if !(dates.include? data.tanggal) || !(datas.include? data.data)
     data.save!
     puts "INSERT: data zona #{data.tanggal} berhasil"
   else
