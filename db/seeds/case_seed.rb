@@ -1693,9 +1693,119 @@ input_into_cases(data)
 data = Case.new(
   positif_covid:   137468,
   sembuh_covid:    91321,
-  meninggal_covid: 6021,
+  meninggal_covid: 6071,
   jumlah_suspek:   76327,
   jumlah_spesimen: 27276,
   fetched_at:      '2020-08-15'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   139549,
+  sembuh_covid:    93103,
+  meninggal_covid: 6150,
+  jumlah_suspek:   77090,
+  jumlah_spesimen: 25414,
+  fetched_at:      '2020-08-16'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   141370,
+  sembuh_covid:    94458,
+  meninggal_covid: 6207,
+  jumlah_suspek:   78659,
+  jumlah_spesimen: 12453,
+  fetched_at:      '2020-08-17'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   143043,
+  sembuh_covid:    96306,
+  meninggal_covid: 6277,
+  jumlah_suspek:   78394,
+  jumlah_spesimen: 14371,
+  fetched_at:      '2020-08-18'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   144945,
+  sembuh_covid:    98657,
+  meninggal_covid: 6346,
+  jumlah_suspek:   79174,
+  jumlah_spesimen: 26078,
+  fetched_at:      '2020-08-19'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   147211,
+  sembuh_covid:    100674,
+  meninggal_covid: 6418,
+  jumlah_suspek:   79484,
+  jumlah_spesimen: 28824,
+  fetched_at:      '2020-08-20'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   149408,
+  sembuh_covid:    102991,
+  meninggal_covid: 6500,
+  jumlah_suspek:   78877,
+  jumlah_spesimen: 19929,
+  fetched_at:      '2020-08-21'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   151498,
+  sembuh_covid:    105198,
+  meninggal_covid: 6594,
+  jumlah_suspek:   75457,
+  jumlah_spesimen: 24749,
+  fetched_at:      '2020-08-22'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   153535,
+  sembuh_covid:    107500,
+  meninggal_covid: 6680,
+  jumlah_suspek:   75522,
+  jumlah_spesimen: 22152,
+  fetched_at:      '2020-08-23'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   155412,
+  sembuh_covid:    111060,
+  meninggal_covid: 6759,
+  jumlah_suspek:   76745,
+  jumlah_spesimen: 19395,
+  fetched_at:      '2020-08-24'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   157859,
+  sembuh_covid:    112867,
+  meninggal_covid: 6858,
+  jumlah_suspek:   76667,
+  jumlah_spesimen: 21275,
+  fetched_at:      '2020-08-25'
+)
+input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   160165,
+  sembuh_covid:    115409,
+  meninggal_covid: 6944,
+  jumlah_suspek:   77056,
+  jumlah_spesimen: 29312,
+  fetched_at:      '2020-08-26'
 )
 input_into_cases(data)
