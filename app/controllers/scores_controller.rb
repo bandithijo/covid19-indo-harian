@@ -5,9 +5,7 @@ class ScoresController < ApplicationController
 
   def index
     if params[:search] || !params[:search].nil?
-      @data_zona = @scores.last.data
-                          .map { |d| JSON.parse(d.gsub('=>', ':')) }
-                          .find_all { |d| d['kota'].include? params[:search].upcase }
+      @data_zona = (search_prov_kota('prov') + search_prov_kota('kota')).uniq
     else
       @data_zona = @scores.last.data.map { |d| JSON.parse(d.gsub('=>', ':')) }
     end
@@ -19,5 +17,10 @@ class ScoresController < ApplicationController
     @scores = Score.all
     @latest_updates = @scores.last.tanggal
     @data_zona_prev = @scores.second_to_last.data.map { |d| JSON.parse(d.gsub('=>', ':')) }
+  end
+
+  def search_prov_kota(prov_kota)
+    @scores.last.data.map { |d| JSON.parse(d.gsub('=>', ':')) }
+           .find_all { |d| d[prov_kota].include? params[:search].upcase }
   end
 end
