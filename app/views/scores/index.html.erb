@@ -6,9 +6,10 @@
         <th class="is-hidden-mobile">Provinsi</th>
         <th><span class="nobr">Kota/Kabupaten</span></th>
         <th>Status</th>
+        <th class="is-hidden-mobile">Status Sebelumnya</th>
       </tr>
       <tr>
-        <td colspan="4" class="pt-0">
+        <td colspan="5" class="pt-0">
           <%= form_tag zona_resiko_path, method: :get do %>
             <%= text_field_tag :search, params[:search], class: 'input is-small', placeholder: 'Cari Kabupaten/Kota...' %>
           <% end %>
@@ -17,18 +18,25 @@
     </thead>
     <tbody>
       <% @data_zona&.each&.with_index(1) do |zona, index| %>
+        <% provinsi      = zona.symbolize_keys[:prov] %>
+        <% kota          = zona.symbolize_keys[:kota] %>
+        <% hasil_terbaru = zona.symbolize_keys[:hasil] %>
+        <% hasil_sebelum = @data_zona_prev.find_all { |d| d['kota'] == kota }[0]['hasil'] %>
         <tr>
           <td class="has-text-left is-hidden-mobile is-vcentered">
             <%= index %>
           </td>
           <td class="has-text-left is-hidden-mobile is-vcentered">
-            <%= zona.symbolize_keys[:prov] %>
+            <%= provinsi %>
           </td>
           <td class="has-text-left is-vcentered">
-            <%= highlight(zona.symbolize_keys[:kota], params[:search]) %>
+            <%= highlight(kota, params[:search]) %>
           </td>
           <td class="has-text-centered is-vcentered">
-            <%= raw status_badge(zona.symbolize_keys[:hasil]) %>
+            <%= raw status_badge(hasil_terbaru) %>
+          </td>
+          <td class="has-text-centered is-vcentered">
+            <%= raw status_badge(hasil_sebelum) %>
           </td>
         </tr>
       <% end %>
