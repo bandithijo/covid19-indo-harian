@@ -33,8 +33,8 @@ class Case < ApplicationRecord
     kasus_today     = Case.all[-1]
     kasus_yesterday = Case.all[-2]
 
-    unless self.id == 1
-      self.update!(
+    unless id == 1
+      update!(
         positif_covid_today: (kasus_today.positif_covid - kasus_yesterday.positif_covid),
         sembuh_covid_today: (kasus_today.sembuh_covid - kasus_yesterday.sembuh_covid),
         meninggal_covid_today: (kasus_today.meninggal_covid - kasus_yesterday.meninggal_covid),
