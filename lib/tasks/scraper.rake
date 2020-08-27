@@ -126,7 +126,7 @@ def run_scraping
   data_old_jumlah_spesimen = data_local_last.jumlah_spesimen - data_local_before_last.jumlah_spesimen
 
   if data_zona_input.valid?
-    if data_zona_input.tanggal != data_zona_local_last&.tanggal || data_zona_input.data != data-zona_local_last.data
+    if data_zona_input.tanggal != data_zona_local_last&.tanggal || data_zona_input.data != data_zona_local_last&.data
       data_zona_input.save
       puts 'INFO: DATA ZONA TERBARU BERHASIL DIINPUTKAN KE DALAM DATABASE!'
 
