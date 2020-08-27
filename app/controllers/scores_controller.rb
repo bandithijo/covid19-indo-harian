@@ -8,6 +8,7 @@ class ScoresController < ApplicationController
       @data_zona = (search_prov_kota('prov') + search_prov_kota('kota')).uniq
     else
       @data_zona = @scores.last.data.map { |d| JSON.parse(d.gsub('=>', ':')) }
+                          .sort_by { |d| d['kode_prov'] }
     end
   end
 
@@ -22,5 +23,7 @@ class ScoresController < ApplicationController
   def search_prov_kota(prov_kota)
     @scores.last.data.map { |d| JSON.parse(d.gsub('=>', ':')) }
            .find_all { |d| d[prov_kota].include? params[:search].upcase }
+           .sort_by { |d| d['kode_prov'] }
+
   end
 end
