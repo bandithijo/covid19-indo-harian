@@ -11,34 +11,43 @@
       <tr>
         <td colspan="5">
           <%= form_tag zona_resiko_path, method: :get do %>
-            <%= text_field_tag :search, params[:search], class: 'input is-small', placeholder: 'Cari Provinsi/Kabupaten/Kota...' %>
+            <%= text_field_tag :search,
+                               params[:search],
+                               class: 'input is-small',
+                               placeholder: 'Cari Provinsi/Kabupaten/Kota...' %>
           <% end %>
         </td>
       </tr>
     </thead>
     <tbody>
-      <% @data_zona&.each&.with_index(1) do |zona, index| %>
-        <% provinsi      = zona.symbolize_keys[:prov] %>
-        <% kota          = zona.symbolize_keys[:kota] %>
-        <% hasil_terbaru = zona.symbolize_keys[:hasil] %>
-        <% hasil_sebelum = @data_zona_prev.find_all { |d| d['kota'] == kota }[0]['hasil'] %>
+      <% if @data_zona.empty?  %>
         <tr>
-          <td class="has-text-left is-hidden-mobile is-vcentered">
-            <%= index %>
-          </td>
-          <td class="has-text-left is-hidden-mobile is-vcentered">
-            <%= highlight(provinsi, params[:search]) %>
-          </td>
-          <td class="has-text-left is-vcentered">
-            <%= highlight(kota, params[:search]) %>
-          </td>
-          <td class="has-text-centered is-vcentered">
-            <%= raw status_badge(hasil_terbaru) %>
-          </td>
-          <td class="has-text-centered is-vcentered">
-            <%= raw status_badge(hasil_sebelum) %>
-          </td>
+          <td colspan="5" class="has-text-centered">-- Data Tidak Ditemukan --</td>
         </tr>
+      <% else %>
+        <% @data_zona&.each&.with_index(1) do |zona, index| %>
+          <% provinsi      = zona.symbolize_keys[:prov] %>
+          <% kota          = zona.symbolize_keys[:kota] %>
+          <% hasil_terbaru = zona.symbolize_keys[:hasil] %>
+          <% hasil_sebelum = @data_zona_prev.find_all { |d| d['kota'] == kota }[0]['hasil'] %>
+          <tr>
+            <td class="has-text-left is-hidden-mobile is-vcentered">
+              <%= index %>
+            </td>
+            <td class="has-text-left is-hidden-mobile is-vcentered">
+              <%= highlight(provinsi, params[:search]) %>
+            </td>
+            <td class="has-text-left is-vcentered">
+              <%= highlight(kota, params[:search]) %>
+            </td>
+            <td class="has-text-centered is-vcentered">
+              <%= raw status_badge(hasil_terbaru) %>
+            </td>
+            <td class="has-text-centered is-vcentered">
+              <%= raw status_badge(hasil_sebelum) %>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
