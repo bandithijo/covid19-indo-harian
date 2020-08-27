@@ -20,9 +20,8 @@
       <% @data_zona&.each&.with_index(1) do |zona, index| %>
         <% provinsi      = zona.symbolize_keys[:prov] %>
         <% kota          = zona.symbolize_keys[:kota] %>
-        <% kode_kota     = zona.symbolize_keys[:kode_kota] %>
         <% hasil_terbaru = zona.symbolize_keys[:hasil] %>
-        <% hasil_sebelum = @data_zona_prev.find_all { |d| d['kode_kota'] == kode_kota }[0]['hasil'] %>
+        <% hasil_sebelum = @data_zona_prev.find_all { |d| d['kota'] == kota }[0]['hasil'] %>
         <tr>
           <td class="has-text-left is-hidden-mobile is-vcentered">
             <%= index %>
