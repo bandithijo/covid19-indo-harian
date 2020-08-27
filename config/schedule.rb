@@ -24,7 +24,7 @@
 # $ whenever --update-crontab
 
 env :PATH, ENV['PATH']
-set :environment, "development"
+set :environment, 'development'
 set :output, 'log/rake.log'
 
 project_dir = `echo $PWD`.strip
