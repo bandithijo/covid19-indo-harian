@@ -24,6 +24,5 @@ class ScoresController < ApplicationController
     @scores.last.data.map { |d| JSON.parse(d.gsub('=>', ':')) }
            .find_all { |d| d[prov_kota].include? params[:search].upcase }
            .sort_by { |d| d['kode_prov'] }
-
   end
 end
