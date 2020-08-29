@@ -1,4 +1,9 @@
 <div class="container is-fluid mt-1">
+
+  <div class="is-size-7 is-hidden-desktop is-fixed-bottom mb-3">
+    <b>*Gunakan desktop untuk tampilan tabel yang lebih lengkap.</b>
+  </div>
+
   <table class="table is-bordered is-hoverable is-fullwidth-mobile" id="table-zona">
     <thead style="z-index:3;">
       <tr>
@@ -44,7 +49,7 @@
             <td class="has-text-centered is-vcentered">
               <%= raw status_badge(hasil_terbaru) %>
             </td>
-            <td class="has-text-centered is-vcentered">
+            <td class="has-text-centered is-hidden-mobile is-vcentered">
               <%= raw status_badge(hasil_sebelum) %>
             </td>
           </tr>
