@@ -2,10 +2,10 @@
   <h1 class="title is-size-3 is-size-3-mobile">COVID-19 INDONESIA</h1>
   <h2 class="subtitle is-size-4 is-size-4-mobile">TABEL PENCATATAN DATA PERHARI</h2>
   <p>
-    <% if controller_name == 'cases' && action_name == 'index' %>
-      Sumber data: Situs Resmi Kementrian Kesehatan Republik Indonesian (https://kemkes.go.id)
+    <% if controller_name == 'cases' %>
+      Sumber data: <%= link_to "Situs Resmi Kementrian Kesehatan Republik Indonesian", "https://kemkes.go.id" %>
     <% elsif controller_name == 'scores' && action_name == 'index' %>
-      Sumber data: covid19.go.id - Zonasi Risiko (https://data.covid19.go.id/public/api/skor.json)
+      Sumber data: <%= link_to "covid19.go.id - Zonasi Risiko", "https://data.covid19.go.id/public/api/skor.json" %>
     <% end %>
     <br>
     Diperbaharui: <b><%= latest_updates %></b>
