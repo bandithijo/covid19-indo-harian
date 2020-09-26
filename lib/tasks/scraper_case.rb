@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative './reformat_date'
+
 begin
   target_url     = 'https://kemkes.go.id/'
   unparsed_page  = HTTParty.get(target_url)
@@ -48,7 +50,7 @@ if data_input.valid?
     puts 'INFO: DATA TERBARU BERHASIL DIINPUTKAN KE DALAM DATABASE!'
     puts "Total Pasien Positif (REMOTE): #{data_input.positif_covid}"
     puts "Total Pasien Positif (LOCAL) : #{data_local_last.positif_covid}"
-    puts 'PERKEMBANGAN DATA HARI INI & KEMARIN'
+    puts 'INFO: PERKEMBANGAN DATA HARI INI & KEMARIN'
     puts "Total Pasien Positif Baru    : #{data_new_positiv_covid}"
     puts "Total Pasien Sembuh Baru     : #{data_new_sembuh_covid}"
     puts "Total Pasien Meninggal Baru  : #{data_new_meninggal_covid}"
@@ -75,7 +77,7 @@ if data_input.valid?
       + " (#{data_input.fetched_at})"
     puts "Total Pasien Positif (LOCAL) : #{data_local_last.positif_covid}" \
       + " (#{data_local_last.fetched_at})"
-    puts 'PERKEMBANGAN DATA HARI INI & KEMARIN'
+    puts 'INFO: PERKEMBANGAN DATA HARI INI & KEMARIN'
     puts "Total Pasien Positif Baru    : #{data_old_positif_covid}"
     puts "Total Pasien Sembuh Baru     : #{data_old_sembuh_covid}"
     puts "Total Pasien Meninggal Baru  : #{data_old_meninggal_covid}"

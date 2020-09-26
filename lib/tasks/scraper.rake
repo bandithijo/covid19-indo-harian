@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative './reformat_date'
-
 task run_scraping: :environment do
   run_scraping
 rescue ActiveRecord::NoDatabaseError

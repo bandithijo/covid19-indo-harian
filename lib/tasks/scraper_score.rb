@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative './reformat_date'
+
 begin
   zona_target_url     = 'https://data.covid19.go.id/public/api/skor.json'
   zona_unparsed_page  = HTTParty.get(zona_target_url)
