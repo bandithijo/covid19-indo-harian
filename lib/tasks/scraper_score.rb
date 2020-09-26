@@ -20,7 +20,8 @@ data_zona_input = Score.new(
 data_zona_local_last = Score.all.last
 
 if data_zona_input.valid?
-  if data_zona_input.tanggal != data_zona_local_last&.tanggal || data_zona_input.data != data_zona_local_last&.data
+  if (data_zona_input.tanggal != data_zona_local_last&.tanggal) ||
+     (data_zona_input.data != data_zona_local_last&.data)
     data_zona_input.save
     puts "+------------------+\n| DATA ZONA RISIKO |\n+------------------+"
     puts 'INFO: DATA ZONA TERBARU BERHASIL DIINPUTKAN KE DALAM DATABASE!'

@@ -44,7 +44,7 @@ data_old_jumlah_spesimen = data_local_last.jumlah_spesimen - data_local_before_l
 
 if data_input.valid?
   if (data_input.fetched_at != data_local_last&.fetched_at) &&
-      (data_input.positif_covid != data_local_last&.positif_covid)
+     (data_input.positif_covid != data_local_last&.positif_covid)
     data_input.save
     puts "+-------------------+\n| DATA KASUS HARIAN |\n+-------------------+"
     puts 'INFO: DATA TERBARU BERHASIL DIINPUTKAN KE DALAM DATABASE!'
