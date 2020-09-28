@@ -27,8 +27,8 @@ end
 
 class Scraper
   def self.run_scraping
-    require_relative './scraper_case'
-    require_relative './scraper_score'
+    require_relative 'scraper/scraper_case'
+    require_relative 'scraper/scraper_score'
 
     return if Case.all.empty? || Score.all.empty? do
       puts 'PERHATIAN: Database Kosong'
