@@ -27,7 +27,7 @@ module ScraperScore
       puts "+------------------+\n| DATA ZONA RISIKO |\n+------------------+"
       puts 'INFO: DATA ZONA TERBARU BERHASIL DIINPUTKAN KE DALAM DATABASE!'
 
-      seeds_file = File.join(File.expand_path('..', __dir__), '..', 'db', 'seeds', 'score_seed.rb')
+      seeds_file = File.join(File.expand_path('..', __dir__), '../..', 'db', 'seeds', 'score_seed.rb')
       File.open(seeds_file, 'a') do |f|
         f.puts "\ndata = Score.new("
         f.puts "  tanggal: '#{data_zona_input.tanggal}',"

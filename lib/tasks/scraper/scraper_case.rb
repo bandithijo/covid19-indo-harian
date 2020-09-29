@@ -58,7 +58,7 @@ module ScraperCase
       puts "Total Suspek                 : #{data_new_jumlah_suspek}"
       puts "Total Spesimen               : #{data_new_jumlah_spesimen}"
 
-      seeds_file = File.join(File.expand_path('..', __dir__), '..', 'db', 'seeds', 'case_seed.rb')
+      seeds_file = File.join(File.expand_path('..', __dir__), '../..', 'db', 'seeds', 'case_seed.rb')
       File.open(seeds_file, 'a') do |f|
         f.puts "\ndata = Case.new("
         f.puts "  positif_covid:   #{data_input.positif_covid},"
