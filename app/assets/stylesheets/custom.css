@@ -62,9 +62,8 @@ thead tr td {
 }
 
 .turbolinks-progress-bar {
-  height: 3px;
+  height: 2px;
   background-color: #B10000;
-  border-radius: 1.5px;
 }
 
 .nav {
