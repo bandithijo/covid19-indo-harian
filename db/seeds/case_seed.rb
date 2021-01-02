@@ -3089,3 +3089,13 @@ data = Case.new(
   fetched_at:      '2021-01-01'
 )
 input_into_cases(data)
+
+data = Case.new(
+  positif_covid:   758473,
+  sembuh_covid:    625518,
+  meninggal_covid: 22555,
+  jumlah_suspek:   69619,
+  jumlah_spesimen: 33530,
+  fetched_at:      '2021-01-02'
+)
+input_into_cases(data)
