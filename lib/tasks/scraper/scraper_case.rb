@@ -7,13 +7,14 @@ module ScraperCase
     target_url     = 'https://kemkes.go.id/'
     unparsed_page  = HTTParty.get(target_url)
     parsed_page    = Nokogiri::HTML(unparsed_page)
+    parsed_data    = parsed_page.css('td').map { |x| x.text.strip }
 
     data = {
-      positif_covid:   parsed_page.css('td')[2].text.gsub('.', '').to_i,
-      sembuh_covid:    parsed_page.css('td')[5].text.gsub('.', '').to_i,
-      meninggal_covid: parsed_page.css('td')[8].text.gsub('.', '').to_i,
-      jumlah_suspek:   parsed_page.css('td')[11].text.gsub('.', '').to_i,
-      jumlah_spesimen: parsed_page.css('td')[14].text.gsub('.', '').to_i,
+      positif_covid:   parsed_data[2].gsub('.', '').to_i,
+      sembuh_covid:    parsed_data[5].gsub('.', '').to_i,
+      meninggal_covid: parsed_data[8].gsub('.', '').to_i,
+      jumlah_suspek:   parsed_data[11].gsub('.', '').to_i,
+      jumlah_spesimen: parsed_data[14].gsub('.', '').to_i,
       fetched_at:      parsed_page.css('li.info-date').text.gsub('Kondisi', '').strip
     }
   rescue StandardError => e
