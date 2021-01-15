@@ -1,13 +1,5 @@
-# --- APAKAH DATA INI DAPAT DIPERCAYA?
-# --- REFERENSI:
-# --- 1. Kami Bertanya kepada Epidemiolog: Apakah Data COVID-19 Pemerintah Bisa
-# ------ Dipercaya? | Buka Mata | https://youtu.be/GuJtjE1wHXA
-# --- 2. Surveilans Covid-19 dan Penyelidikan Epidemiologi Covid-19
-# ------ https://youtu.be/erP1klFq9MQ
-
-if Case.all.size > 0
-  puts "INFO: tabel 'cases' sudah terisi data"
-  exit
+Dir[File.join(Rails.root, 'db', 'seeds', '*.rb')].each do |seed|
+  load seed
 end
 
 data = Case.create(

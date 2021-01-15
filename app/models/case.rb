@@ -11,9 +11,14 @@ class Case < ApplicationRecord
   validates :fetched_at,
             presence: true
 
+  private
+
   def self.to_csv
-    attributes = %w[id fetched_at positif_covid meninggal_covid
-                    sembuh_covid jumlah_suspek jumlah_spesimen]
+    attributes = %w[id fetched_at positif_covid positif_covid_today
+                    meninggal_covid meninggal_covid_today
+                    sembuh_covid sembuh_covid_today
+                    jumlah_suspek jumlah_suspek_today
+                    jumlah_spesimen jumlah_spesimen_today]
 
     CSV.generate(headers: true, col_sep: ';') do |csv|
       csv << attributes
@@ -24,14 +29,12 @@ class Case < ApplicationRecord
     end
   end
 
-  private
-
   def calculate_todays_data
     kasus_today     = Case.all[-1]
     kasus_yesterday = Case.all[-2]
 
-    unless self.id == 1
-      self.update!(
+    unless id == 1
+      update!(
         positif_covid_today: (kasus_today.positif_covid - kasus_yesterday.positif_covid),
         sembuh_covid_today: (kasus_today.sembuh_covid - kasus_yesterday.sembuh_covid),
         meninggal_covid_today: (kasus_today.meninggal_covid - kasus_yesterday.meninggal_covid),

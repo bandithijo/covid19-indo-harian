@@ -11,7 +11,11 @@ p {
   padding: 0 0 10px 0;
 }
 
-table {
+table#table-case {
+  margin-top: 6px;
+}
+
+table#table-zona {
   margin-top: 8px;
 }
 
@@ -21,6 +25,14 @@ thead tr th {
   text-align: center !important;
   position: sticky !important;
   top: 134px !important;
+}
+
+/* for search on Zona Risiko */
+thead tr td {
+  background-color: #363636;
+  text-align: center !important;
+  position: sticky !important;
+  top: 165px !important;
 }
 
 .container.hold {
@@ -38,7 +50,7 @@ thead tr th {
 
 .legend,
 .chart {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .legend table {
@@ -50,9 +62,8 @@ thead tr th {
 }
 
 .turbolinks-progress-bar {
-  height: 3px;
+  height: 2px;
   background-color: #B10000;
-  border-radius: 1.5px;
 }
 
 .nav {
@@ -77,8 +88,28 @@ h4.subtitle.is-4 {
   line-height: 1;
 }
 
+mark {
+  background-color: #FFDD57;
+  font-weight: bold;
+}
+
+.input::placeholder {
+  color: rgba(54, 54, 54, 1) !important;
+}
+
+input:focus, textarea:focus, select:focus{
+  background-color: #ffffff;
+  color: #000000;
+  outline: none;
+  border: none;
+}
+
 .is-danger {
   background-color: #B10000 !important;
+}
+
+.is-orange {
+  background-color: #FA745E !important;
 }
 
 @media screen and (max-width: 360px) {
@@ -91,11 +122,11 @@ h4.subtitle.is-4 {
   }
 
   thead tr th {
-    background-color: #363636;
-    color: white !important;
-    text-align: center !important;
-    position: sticky !important;
     top: 209px !important;
+  }
+
+  thead tr td {
+    top: 240px !important;
   }
 
   .buttons .button:not(:last-child):not(.is-fullwidth) {
@@ -113,11 +144,11 @@ h4.subtitle.is-4 {
   }
 
   thead tr th {
-    background-color: #363636;
-    color: white !important;
-    text-align: center !important;
-    position: sticky !important;
-    top: 176px !important;
+    top: 210px !important;
+  }
+
+  thead tr td {
+    top: 240px !important;
   }
 }
 

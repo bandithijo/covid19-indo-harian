@@ -35,6 +35,6 @@ class CasesController < ApplicationController
 
   def set_cases
     @cases = Case.all
-    @latest_updates = @cases.last.fetched_at
+    @latest_updates = @cases.last&.fetched_at
   end
 end

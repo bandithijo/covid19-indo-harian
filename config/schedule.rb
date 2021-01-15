@@ -24,11 +24,11 @@
 # $ whenever --update-crontab
 
 env :PATH, ENV['PATH']
-set :environment, "development"
+set :environment, 'development'
 set :output, 'log/rake.log'
 
 project_dir = `echo $PWD`.strip
-every 1.day, at: ['5.00 pm', '5:30 pm', '6:00 pm', '7:00 pm', '10:00 pm'] do
+every 1.day, at: ['5:00 pm', '5:30 pm', '6:00 pm', '6:30 pm', '10:00 pm'] do
   command "cd #{project_dir}; \
            rake scraper:run; \
            rake scraper:seed:commit"

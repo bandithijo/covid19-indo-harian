@@ -20,7 +20,7 @@ Proyek ini adalah kelanjutan dari proyek sebelumnya yang hanya berupa Ruby *scri
 | 3 | [**HTTParty**](https://rubygems.org/gems/httparty) | `0.18.1` |
 | 4 | [**Nokogiri**](https://rubygems.org/gems/nokogiri) | `1.10.9` |
 | 5 | [**Whenever**](https://rubygems/gems/whenever) | `1.0` |
-| 6 | [**ChartKick**](https://chartkick.com/) | `3.3.1` |
+| 6 | [**ChartKick**](https://chartkick.com/) | `3.4` |
 | 7 | [**Bulma Rails**](https://rubygems.org/gems/bulma-rails) | `0.9.0` |
 
 ## Menjalankan Rails Server

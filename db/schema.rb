@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_010303) do
+ActiveRecord::Schema.define(version: 2020_08_26_144752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(version: 2020_07_17_010303) do
     t.integer "jumlah_suspek_today", default: 0
     t.integer "jumlah_spesimen_today", default: 0
     t.integer "aktif", default: 0
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.date "tanggal"
+    t.text "data", default: [], array: true
+    t.text "data_prev", default: [], array: true
   end
 
 end

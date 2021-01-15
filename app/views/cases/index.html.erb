@@ -62,16 +62,22 @@
         </tr>
       <% end %>
       <script>
-        var rows = document.querySelectorAll('#table-case tr');
-        rows[<%= @cases.size %>].scrollIntoView({
-          behavior: 'smooth',
-          block: 'end'
+        document.addEventListener("turbolinks:load", ()=> {
+          var rows = document.querySelectorAll('#table-case tr');
+          rows[<%= @cases.size %>].scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
         });
       </script>
     </tbody>
   </table>
 
-  <div class="buttons are-small">
+  <div class="is-size-7 is-hidden-desktop is-flex-mobile mb-5">
+    <b>*Gunakan desktop untuk tampilan tabel yang lebih lengkap.</b>
+  </div>
+
+  <div class="buttons are-small mb-0">
     <%= link_to cases_path(format: "xlsx"), class: "button is-fullwidth-mobile" do %>
       <span class="icon">
         <%= image_tag 'file-download-solid.svg', width: '12' %>
@@ -87,13 +93,9 @@
     <% end %>
   </div>
 
-  <div class="is-size-7 is-hidden-desktop is-flex-mobile">
-    <b>*Gunakan desktop untuk tampilan tabel yang lebih lengkap.</b>
-  </div>
-
   <div class="legend">
-    <h4 class="subtitle is-4">Legenda:</h3>
-    <table class="table is-bordered">
+    <h4 class="subtitle is-4 mb-2">Legenda:</h3>
+    <table class="table is-bordered pb">
       <tr>
         <td class="has-text-right"><b>Tanggal</b></td>
         <td class="has-text-left">Tanggal perhari</td>
