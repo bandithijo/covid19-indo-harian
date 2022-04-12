@@ -37,7 +37,7 @@ gem 'jbuilder',                           '~> 2.5'
 gem 'bootsnap',                           '>= 1.1.0', require: false
 
 gem 'httparty',                           '~> 0.18.1'
-gem 'nokogiri',                           '~> 1.10', '>= 1.10.9'
+gem 'nokogiri',                           '~> 1.13'
 gem 'whenever',                           '~> 1.0', require: false
 gem 'chartkick',                          '~> 3.4'
 gem 'groupdate',                          '~> 5.0'
